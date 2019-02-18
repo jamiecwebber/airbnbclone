@@ -5,7 +5,7 @@ class CreateBookings < ActiveRecord::Migration[5.2]
       t.references :apartment, foreign_key: true
       t.string :enter_date
       t.string :exit_date
-      t.string :price_total
+      t.integer :price_total
 
       t.timestamps
     end
