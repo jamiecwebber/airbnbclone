@@ -1,5 +1,5 @@
 class Apartment < ApplicationRecord
   belongs_to :user
 
-  validates uniqueness: true;
+  validates :name, uniqueness: true
 end

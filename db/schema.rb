@@ -33,7 +33,7 @@ ActiveRecord::Schema.define(version: 2019_02_18_191619) do
     t.bigint "apartment_id"
     t.string "enter_date"
     t.string "exit_date"
-    t.string "price_total"
+    t.integer "price_total"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["apartment_id"], name: "index_bookings_on_apartment_id"
@@ -41,7 +41,7 @@ ActiveRecord::Schema.define(version: 2019_02_18_191619) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.boolean "owner"
+    t.boolean "owner", default: false
     t.string "first_name"
     t.string "last_name"
     t.string "email"
