@@ -1,5 +1,6 @@
 class ApartmentsController < ApplicationController
   def index
+    @apartment = Apartment.new([:cocktail_id])
   end
 
   def show
