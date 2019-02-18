@@ -1,2 +1,19 @@
-<h1>Apartments#index</h1>
-<p>Find me in app/views/apartments/index.html.erb</p>
+<h1>Your Listed Apartments</h1>
+<p>Here is your current list of apartments: </p>
+
+ <div class="row">
+     <div class="card">
+      <div class="col-sm-12">
+        <div class = "list">
+          <ul>
+            <% @apartments.each do |apartment| %>
+                <li><%= link_to apartment.name, apartment_path(apartment.id)%></li>
+              <% end %>
+            </ul>
+
+            <div class="btn">
+              <%= link_to "Apartment", new_cocktail_path %>
+            </div>
+            </div>
+          </div>
+        </div>

@@ -1,5 +1,7 @@
 class ApartmentsController < ApplicationController
+  # GET /users/:user_id/appartments
   def index
+    @apartment = Apartment.where({ user_id: params[:user_id] })
   end
 
   def show
