@@ -8,22 +8,21 @@ class BookingsController < ApplicationController
   end
 
   def new
-    @user = User.find(params[:user_id])
     @booking = Booking.new
     # link to bookings#new needs to send an :apartment_id parameter
-    @apartment = params[:apartment_id]
+    @apartment = Apartment.find(params[:apartment_id])
   end
 
   def create
-    @user = User.find(params[:user_id])
-    @apartment = Apartment.find(params([:apartment_id]))
+    @apartment = Apartment.find(params[:apartment_id])
     @booking = Booking.new(booking_params)
-    @booking.user = @user
+    @booking.user_id = 1
     @booking.apartment = @apartment
+   
     if @booking.save
-      redirect_to user_booking_path(@booking)
+      redirect_to apartment_booking_path(@booking)
     else
-      :new
+      render :new
     end
   end
 
