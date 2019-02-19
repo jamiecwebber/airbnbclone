@@ -1,11 +1,20 @@
-<h1>Your Listed Apartments</h1>
-<%= link_to "upload your nifty new experience", new_apartment_path, class:"btn btn-success" %>
-<p>Here is your current list of apartments: </p>
 
-  <% @apartments.each do |apartment| %>
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-3"><div class="card"><%= link_to apartment.name, apartment_path(apartment.id) %></div><img src=<%= apartment.photos %>height="450" width="410"></div></div>
-      </div>
-    </div>
-  <% end %>
+
+
+<%= link_to "upload your new experience", new_apartment_path, class:"btn btn-success" %>
+
+
+  <div class="row">
+    <% @apartments.each do |apartment| %>
+        <div class="col-sm-6 col-lg-4">
+        	<div class="card">
+        		<%= link_to(apartment_path(apartment.id)) do %>	
+        			<img src=<%= apartment.photos %> >
+        			<div class="gradient"></div>
+        				<h2><%= apartment.name %></h2>
+        				<p><%= apartment.description %></p>
+        		<% end %>
+        	</div>
+        </div>
+    <% end %>
+  </div>
