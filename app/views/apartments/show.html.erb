@@ -1,2 +1,9 @@
-<h1>All Apartments</h1>
-<p>Here are all your apartments: </p>
+<h1> <%= @apartment.name %></h1>
+<p>Here is a description of your apartment: </p>
+
+  <p> Name: <%=  @apartment.name %> </p>
+  <p> Price: <%=  @apartment.price_per_day %></p>
+  <p> Theme: <%=  @apartment.category %></p>
+  <p> Location: <%=  @apartment.description %></p>
+  <p> Location: <%=  @apartment.location %></p>
+
