@@ -18,10 +18,10 @@
       data: { confirm: "Are you sure?" } %>
   </div>
   <div class="btn">
-    <%= link_to "Book this apartment", new_booking_path({apartment_id: @apartment.id}) %>
+    <%= link_to "Book", new_booking_path({apartment_id: @apartment.id}) %>
   </div>
   <div class="btn">
-    <%= link_to "Return To All", apartments_path %>
+    <%= link_to "Back", apartments_path %>
   </div>
 
 

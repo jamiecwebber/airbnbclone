@@ -1,6 +1,4 @@
 class BookingsController < ApplicationController
-  authorize @booking
-
   def index
     @bookings = Booking.where(user_id: current_user.id)
   end
