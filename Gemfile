@@ -1,10 +1,17 @@
 source 'https://rubygems.org'
 ruby '2.5.3'
 
-gem "pundit"
+# Front End Gems
+gem 'simple_form'
+gem 'dotenv-rails', groups: [:development, :test]
+gem 'cloudinary', '~> 1.9.1'
+gem 'carrierwave', '~> 1.2'
+
+# Seeder Gems
 gem 'faker'
 gem 'rest-client'
 
+# Authentication & Authorisation gems
 gem 'devise'
 
 gem 'bootsnap', require: false
@@ -18,7 +25,6 @@ gem 'autoprefixer-rails'
 gem 'bootstrap-sass', '~> 3.3'
 gem 'font-awesome-sass', '~> 5.5.0'
 gem 'sassc-rails'
-gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
 

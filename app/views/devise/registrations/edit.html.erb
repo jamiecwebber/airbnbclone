@@ -21,6 +21,10 @@
                 hint: "we need your current password to confirm your changes",
                 required: true,
                 input_html: { autocomplete: "current-password" } %>
+    <%= f.input :first_name, required: true, autofocus: true %>
+    <%= f.input :last_name, required: true, autofocus: true %>
+    <%= f.input :upload_phots %>
+    <%= f.input :upload_photos_cache, as: :hidden %>
   </div>
 
   <div class="form-actions">
