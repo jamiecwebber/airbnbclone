@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
-  devise_for :users
+ devise_for :users
 
-  resources :apartments do
-    resources :bookings
-  end
+ resources :apartments do
+   resources :bookings
+ end
 
-  root to: 'apartments#index'
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+ root to: 'apartments#index'
+ # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

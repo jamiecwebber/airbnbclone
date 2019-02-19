@@ -1,2 +1,24 @@
-<h1>Apartments#show</h1>
-<p>Find me in app/views/apartments/show.html.erb</p>
+<h1> <%= @apartment.name %></h1>
+<p>Here is a description of your apartment: </p>
+
+<img src=<%= @apartment.photos %> alt="">
+
+  <p> Name: <%=  @apartment.name %> </p>
+  <p> Price: <%=  @apartment.price_per_day %></p>
+  <p> Theme: <%=  @apartment.category %></p>
+  <p> Location: <%=  @apartment.description %></p>
+  <p> Location: <%=  @apartment.location %></p>
+
+  <div class="btn">
+    <%= link_to "Edit", edit_apartment_path %>
+  </div>
+  <div class="btn">
+   <%= link_to "Delete", apartment_path,
+      method: :delete,
+      data: { confirm: "Are you sure?" } %>
+  </div>
+  <div class="btn">
+    <%= link_to "Return To All", apartments_path %>
+  </div>
+
+
