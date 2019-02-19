@@ -2,18 +2,32 @@
 <p>Here is your current list of apartments: </p>
 
  <div class="row">
-     <div class="card">
-      <div class="col-sm-12">
-        <div class = "list">
-          <ul>
-            <% @apartments.each do |apartment| %>
-                <li><%= link_to apartment.name, apartment_path(user.id)%></li>
-              <% end %>
-            </ul>
 
-            <div class="btn">
-              <%= link_to "Apartment", apartments_path %>
-            </div>
-            </div>
-          </div>
-        </div>
+
+  <% @apartments.each do |apartment| %>
+    <div class="col-sm-6">
+      <div class="card">
+
+      <%= link_to apartment.name, apartment_path(apartment.id)%>
+
+      </div>
+    </div>
+  <% end %>
+
+</div>
+<div class="btn">
+    <%= link_to "Return", apartments_path %>
+  </div>
+
+<!-- <div class="container">
+  <div class="row">
+    <div class="col-xs-3"></div>
+    <div class="col-xs-3"></div>
+    <div class="col-xs-3"></div>
+    <div class="col-xs-3"></div>
+    <div class="col-xs-3"></div>
+
+
+  </div>
+</div>
+ -->
