@@ -1,27 +1,53 @@
 .container {
-  border: 1px solid red;
+  // border: 1px solid red;
+}
+
+.science {
+  background-color: #86CB92;
+}
+
+.arts {
+  background-color: #DE842C;
+
+}
+
+.sports {
+  background-color: #799BD2;
+}
+
+.business {
+  background-color: #CCCCCC;
+}
+
+.white {
+  color: white;
+}
+
+.bold {
+  font-weight: bold
 }
 
 .apartment-photo-collage {
   padding: 0;
-  border: 1px solid black;
+  // border: 1px solid black;
   img {
     width: 100%;
+    height: 25%;
   }
 }
 
 .apartment-details {
-  padding: 0;
-  border: 1px solid black;
+  padding: 20px;
+  // border: 1px solid black;
 }
 
 .apartment-booking-form {
-  padding: 0;
-  border: 1px solid black;
+  padding: 20px;
+  // border: 1px solid black;
 }
 
 .apartment-controls {
   padding: 0;
-  border: 1px solid black;
+  // border: 1px solid black;
 }
 

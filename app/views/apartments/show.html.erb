@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container <%= @apartment.category %>">
 
   <div class="row">
     <div class="col-xs-12">
@@ -24,10 +24,10 @@
             data: { confirm: "Are you sure?" } %>
         </div>
         <div class="btn">
-          <%= link_to "Book this apartment", new_booking_path({apartment_id: @apartment.id}) %>
+          <%= link_to "Book", new_booking_path({apartment_id: @apartment.id}) %>
         </div>
         <div class="btn">
-          <%= link_to "Return To All", apartments_path %>
+          <%= link_to "Back", apartments_path %>
         </div>
       </div>
     </div>
@@ -36,13 +36,13 @@
   <div class="row">
     <div class="col-xs-12 col-sm-6">
       <div class="apartment-details">
-        <h1> <%= @apartment.name %></h1>
+        <h1 class="white"> <%= @apartment.name %></h1>
         <p>Here is a description of your apartment: </p>
-        <p> Name: <%=  @apartment.name %> </p>
-        <p> Price: <%=  @apartment.price_per_day %></p>
-        <p> Theme: <%=  @apartment.category %></p>
-        <p> Location: <%=  @apartment.description %></p>
-        <p> Location: <%=  @apartment.location %></p>
+        <p> <strong>Name:</strong> <%=  @apartment.name %> </p>
+        <p> <strong>Price:</strong><%=  @apartment.price_per_day %></p>
+        <p> <strong>Theme:</strong> <%=  @apartment.category %></p>
+        <p> <strong>Location:</strong><%=  @apartment.description %></p>
+        <p> <strong>Location:</strong><%=  @apartment.location %></p>
       </div>
     </div>
 
