@@ -1,5 +1,7 @@
 class ApartmentsController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:index, :show]
   # GET /apartments
+
   def index
     @apartments = Apartment.all
 
