@@ -1,4 +1,6 @@
 class ApartmentsController < ApplicationController
+  authorize @apartment
+
   def index
   end
 

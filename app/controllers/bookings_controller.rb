@@ -1,4 +1,6 @@
 class BookingsController < ApplicationController
+  authorize @booking
+
   def index
   end
 

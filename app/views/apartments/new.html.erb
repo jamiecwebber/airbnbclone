@@ -1,2 +1,6 @@
 <h1>Apartments#new</h1>
 <p>Find me in app/views/apartments/new.html.erb</p>
+
+<% if policy(Apartment).create? %>
+  <%= link_to "New apartment", new_apartment_path %>
+<% end %>
