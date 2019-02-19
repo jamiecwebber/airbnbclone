@@ -1,2 +1,9 @@
-<h1>Bookings#index</h1>
-<p>Find me in app/views/bookings/index.html.erb</p>
+<h1>All bookings for <%= current_user.first_name %>  <%=current_user.last_name %></h1>
+<% @bookings.each do |booking| %>
+	<div class="booking-card">
+		<h2><%= booking.apartment.name %></h2>
+		<p><%= booking.enter_date %> to <%= booking.exit_date %></p>
+		<p>Price per night: <%= booking.apartment.price_per_day %></p>
+		<p>Total price: <%= booking.price_total %></p>
+	</div>
+<% end %>

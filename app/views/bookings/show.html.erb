@@ -1,2 +1,18 @@
-<h1>Bookings#show</h1>
-<p>Find me in app/views/bookings/show.html.erb</p>
+<h1>Booking details for <%= @apartment.name %></h1>
+<table>
+	<tr>
+		<td>Start date:</td>  <td><%= @booking.enter_date %></td>
+	</tr>
+	<tr>
+		<td>End date:</td>    <td><%= @booking.exit_date %></td>
+	</tr>
+	<tr>
+		<td>Total number of days: </td><td> <%= (Date.parse(@booking.exit_date) - Date.parse(@booking.enter_date)).to_i %></td>
+	</tr>
+	<tr>
+		<td>Cost per day:</td><td> <%= @apartment.price_per_day %></td>
+	</tr>
+	<tr>
+		<td>Total cost:</td><td> <%= @booking.price_total %></td>
+	</tr>
+</table>
