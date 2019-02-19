@@ -70,7 +70,9 @@ guests.each do |user|
     owner: false,
     first_name: first_name,
     last_name: last_name,
+    password: Faker::Address.city,
     email: email,
+    password: Faker::Address.city,
     bio: bio,
     photos: photos,
     password: first_name + last_name
@@ -91,7 +93,9 @@ hosts.each do |user|
     owner: true,
     first_name: first_name,
     last_name: last_name,
+    password: Faker::Address.city,
     email: email,
+    password: Faker::Address.city,
     bio: bio,
     photos: photos,
     password: first_name + last_name
