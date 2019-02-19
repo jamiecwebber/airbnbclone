@@ -41,13 +41,13 @@ class ApartmentsController < ApplicationController
     @apartment = Apartment.find(params[:id])
     @apartment.destroy
 
-    redirect_to apartment_path
+    redirect_to apartments_path
   end
 
      private
 
   def apartment_params
-    params.require(:apartment).permit(:price_per_day, :category, :name, :description,:location)
+    params.require(:apartment).permit(:user_id, :price_per_day, :category, :name, :description, :location)
   end
 end
 

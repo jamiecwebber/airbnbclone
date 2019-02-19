@@ -8,6 +8,7 @@
     <%= f.input :name%>
     <%= f.input :description%>
     <%= f.input :location%>
+    <%= f.hidden_field :user_id, value: current_user.id %>
   </div>
 
   <div class="form-actions">
