@@ -1,10 +1,11 @@
 class BookingsController < ApplicationController
   def index
-    @bookings = Booking.all
+    @bookings = Booking.where(user_id: current_user.id)
   end
 
   def show
     @booking = Booking.find(params[:id])
+    @apartment = Apartment.find(params[:apartment_id])
   end
 
   def new
@@ -16,11 +17,12 @@ class BookingsController < ApplicationController
   def create
     @apartment = Apartment.find(params[:apartment_id])
     @booking = Booking.new(booking_params)
-    @booking.user_id = 1
+    @total_days = (Date.parse(params[:booking][:exit_date]) - Date.parse(params[:booking][:enter_date])).to_i
+    @booking.price_total = @total_days * @apartment.price_per_day
+    @booking.user_id = current_user.id
     @booking.apartment = @apartment
-   
     if @booking.save
-      redirect_to apartment_booking_path(@booking)
+      redirect_to apartment_booking_path(id: @booking.id)
     else
       render :new
     end
@@ -41,6 +43,6 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-    params.require(:booking).permit(:enter_date, :exit_date, :price_total)
+    params.require(:booking).permit(:enter_date, :exit_date)
   end
 end

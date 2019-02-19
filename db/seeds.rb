@@ -72,8 +72,10 @@ guests.each do |user|
     last_name: last_name,
     email: email,
     bio: bio,
-    photos: photos
+    photos: photos,
+    password: first_name + last_name
     })
+  p new_user
   new_user.save
 end
 
@@ -91,7 +93,8 @@ hosts.each do |user|
     last_name: last_name,
     email: email,
     bio: bio,
-    photos: photos
+    photos: photos,
+    password: first_name + last_name
   })
   new_user.save
 
