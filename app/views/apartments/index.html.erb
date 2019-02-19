@@ -1,23 +1,14 @@
 <h1>Your Listed Apartments</h1>
 <p>Here is your current list of apartments: </p>
 
- <div class="row">
-
-
   <% @apartments.each do |apartment| %>
-    <div class="col-sm-6">
-      <div class="card">
-
-      <%= link_to apartment.name, apartment_path(apartment.id)%>
-
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-3"><div class="card"><%= link_to apartment.name, apartment_path(apartment.id) %></div><img src=<%= apartment.photos %>height="450" width="410"></div></div>
       </div>
     </div>
   <% end %>
 
-</div>
-<div class="btn">
-    <%= link_to "Return", apartments_path %>
-  </div>
 
 <!-- <div class="container">
   <div class="row">

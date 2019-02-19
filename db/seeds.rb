@@ -71,6 +71,7 @@ guests.each do |user|
     first_name: first_name,
     last_name: last_name,
     email: email,
+    password: Faker::Address.city,
     bio: bio,
     photos: photos
     })
@@ -90,6 +91,7 @@ hosts.each do |user|
     first_name: first_name,
     last_name: last_name,
     email: email,
+    password: Faker::Address.city,
     bio: bio,
     photos: photos
   })
