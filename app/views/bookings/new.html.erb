@@ -1,2 +1,15 @@
-<h1>Bookings#new</h1>
-<p>Find me in app/views/bookings/new.html.erb</p>
+<h1>Make a new booking</h1>
+<p>Make a booking for <%= @apartment.name %></p>
+<p>Price per night: <%= @apartment.price_per_day %></p>
+
+<%= simple_form_for [@apartment, @booking] do |f| %>
+	<div class="row">
+		<div class="col-xs-12 col-sm-6">
+			<%= f.input :enter_date, as: :date, start_year: Date.today.year, order: [:day, :month, :year], html5: true %>
+		</div>
+		<div class="col=xs-12 col-sm-6">
+			<%= f.input :exit_date, as: :date, start_year: Date.today.year, order: [:day, :month, :year], html5: true %>
+		</div>
+	</div>
+	<%= f.submit "make a booking!" %>
+<% end %>

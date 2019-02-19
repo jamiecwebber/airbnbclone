@@ -70,11 +70,14 @@ guests.each do |user|
     owner: false,
     first_name: first_name,
     last_name: last_name,
+    password: Faker::Address.city,
     email: email,
     password: Faker::Address.city,
     bio: bio,
-    photos: photos
+    photos: photos,
+    password: first_name + last_name
     })
+  p new_user
   new_user.save
 end
 
@@ -90,10 +93,12 @@ hosts.each do |user|
     owner: true,
     first_name: first_name,
     last_name: last_name,
+    password: Faker::Address.city,
     email: email,
     password: Faker::Address.city,
     bio: bio,
-    photos: photos
+    photos: photos,
+    password: first_name + last_name
   })
   new_user.save
 
