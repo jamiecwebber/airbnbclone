@@ -9,6 +9,7 @@ class ApartmentsController < ApplicationController
   end
 
   def show
+    @booking = Booking.new()
     @apartment = Apartment.find(params[:id])
   end
 
@@ -49,7 +50,7 @@ class ApartmentsController < ApplicationController
      private
 
   def apartment_params
-    params.require(:apartment).permit(:user_id, :price_per_day, :category, :name, :description, :location)
+    params.require(:apartment).permit(:user_id, :price_per_day, :category, :name, :description, :location, :upload_photos)
   end
 end
 
