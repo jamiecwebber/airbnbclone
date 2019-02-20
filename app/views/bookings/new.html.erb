@@ -1,6 +1,6 @@
 <h1>Make a new booking</h1>
-<p>Make a booking for <%= @apartment.name %></p>
-<p>Price per night: <%= @apartment.price_per_day %></p>
+<p>Make a booking for  <%= @apartment.name %></p>
+<p><strong>Price per night: </strong><%= @apartment.price_per_day %></p>
 
 <%= simple_form_for @booking do |f| %>
 	<div class="row">
