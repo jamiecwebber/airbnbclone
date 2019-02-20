@@ -5,7 +5,7 @@
       <div class="apartment-photo-collage">
         <% unless @apartment.photos.nil? %>
           <img src=<%= @apartment.photos%> width="200" height="200" >
-          <%= @apartment.name %>
+          <div class="box-name"><p><%= @apartment.user.first_name %>'s <%= @apartment.name %></p></div>
         <% else %>
           <%=cl_image_tag(@apartment.upload_photos) unless @apartment.upload_photos.blank? %>
         <% end %>
@@ -38,16 +38,16 @@
     <div class="col-xs-12 col-sm-6">
       <div class="apartment-user-avatar">
         <% if @apartment.user.photos %>
-          <img src="<%= @apartment.user.photos %>" alt="">
+          <img class="host-avatar" src="<%= @apartment.user.photos %>" alt="">
         <% else %>
           <img src="<%= cl_image_tag @apartment.user.upload_photos unless @apartment.user.upload_photos.blank?  %>" alt="">
         <% end %>
       </div>
       <div class="user-details">
-        <p>Host Since: <%= @apartment.user.created_at %></p>
-        <p>Name: <%= @apartment.user.first_name %> <%= @apartment.user.last_name %>
+        <p><strong>Host Since:</strong><%= @apartment.user.created_at %></p>
+        <p><strong>Name:</strong><%= @apartment.user.first_name %> <%= @apartment.user.last_name %>
         </p>
-        <p>Bio: <%= @apartment.user.bio %></p>
+        <p><strong>Bio:</strong><%= @apartment.user.bio %></p>
       </div>
       <div class="apartment-details">
         <h1 class="white"> <%= @apartment.name %></h1>
