@@ -38,9 +38,9 @@
     <div class="col-xs-12 col-sm-6">
       <div class="apartment-user-avatar">
         <% if @apartment.user.photos %>
-          <img class="host-avatar" src="<%= @apartment.user.photos %>" alt="">
+          <img class="host-avatar" src="<%= @apartment.user.photos %>">
         <% else %>
-          <img src="<%= cl_image_tag @apartment.user.upload_photos unless @apartment.user.upload_photos.blank?  %>" alt="">
+          <img class="host-avatar" src="<%= cl_image_path(@apartment.user.upload_photos) unless @apartment.user.upload_photos.blank? %>">
         <% end %>
       </div>
       <div class="user-details">
