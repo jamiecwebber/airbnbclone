@@ -1,5 +1,5 @@
 /* Main navbar */
-.navbar {
+.navbar-wagon {
   box-shadow: 20 8px 6px -6px;
   background: #fff;
   width: 100%;
@@ -11,36 +11,52 @@
   display: flex;
   font-family: "metropolis",sans-serif;
   justify-content: space-between;
-  border: 1px solid blue;
+  overflow: hidden;
+  position: fixed;
 }
 
 /* Logo */
 .logo {
   height: 25px;
-  padding-right: 15px;
-  padding-left: 15px;
+  padding: 10px;
+  opacity: 20;
+  filter: alpha(opacity=50);
+
 }
 
-/* User Avatar */
-// .navbar-wagon .avatar {
-//   height: 35px;
-//   width: 35px;
-//   border-radius: 50%;
-// }
+// /* User Avatar */
+.navbar-wagon .avatar {
+  height: 35px;
+  width: 35px;
+  border-radius: 50%;
+}
 
 /* Right section */
-.my-navbar-right {
+.navbar-right {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border: 1px solid red;
-  padding: 0px !important;
+  font-family: 'hk_groteskbold';
+  font-size: 9px;
+  line-height: 1;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #000;
+  padding-right: 10px;
+  padding-bottom: 4px;
+  border-bottom: 3px solid transparent;
+  text-decoration: none;
+  margin-right: 20px;
+
 }
 
 /* Basic navbar item */
 .navbar-item {
   cursor: pointer;
-  padding: 0 20px;
+  padding: 20px;
+  margin: 10px;
+  justify-content: space-between;
+  color: #000;
 }
 
 /* Navbar link */
@@ -49,8 +65,9 @@
   font-size: 14px;
 }
 .navbar-wagon-link:hover {
-  color: #da552f;
-  text-decoration: none;
+  color: black;
+  transition: all 0.25s ease-in-out;
+  text-decoration: underline;
 }
 
 /* Dropdown menu */
@@ -60,7 +77,7 @@
   border-color: #E6E6E6;
 }
 .navbar-wagon-dropdown-menu li > a {
-  transition: color 0.3s ease;
+  transition: all 0.25s ease-in-out;
   font-weight: lighter !important;
   color: #999999 !important;
   font-size: 15px !important;
