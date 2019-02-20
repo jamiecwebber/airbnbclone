@@ -72,18 +72,24 @@
       <div class="apartment-reviews">
         <h1>Reviews for: <%= @apartment.name %></h1>
         <% @apartment.bookings.reverse_each do |booking| %>
-          <div class="review-card">
-            <div class="first-line">
-              <div class="name">
-                <p>Name: <%= booking.user.first_name %></p>
+
+          <% unless booking.reviews[0].nil? %>
+            <div class="review-card">
+              <div class="first-line">
+                <div class="name">
+                  <p>Name: <%= booking.user.first_name %></p>
+                </div>
+                <div class="rating">
+                    <p>
+                        <% booking.reviews[0].rating.times do %>&#9733;<% end %> 
+                      
+                    </p>
+                </div>
               </div>
-              <div class="rating">
-                <p><% booking.reviews[0].rating.times do %>&#9733;<% end %> </p>
-              </div>
+              <p>Date: <%= booking.exit_date %></p>
+              <p> <%= booking.reviews[0].content %><p>
             </div>
-            <p>Date: <%= booking.exit_date %></p>
-            <p> <%= booking.reviews[0].content %><p>
-          </div>
+          <% end %>
         <% end %>
       </div>
     </div>
