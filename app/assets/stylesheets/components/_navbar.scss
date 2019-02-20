@@ -1,21 +1,35 @@
 /* Main navbar */
 .navbar-wagon {
-  box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
-  background: white;
+  box-shadow: 20 8px 6px -6px;
+  background: #fff;
+  width: 100%;
+  top: 0;
+  left: 0;
   transition: all 0.3s ease;
   height: 70px;
-  padding: 0px 30px;
+  padding: 0px;
   display: flex;
-  align-items: center;
+  font-family: "metropolis",sans-serif;
   justify-content: space-between;
+  overflow: hidden;
+  position: fixed;
+  z-index:1;
 }
 
 /* Logo */
-.navbar-wagon-brand img {
-  height: 50px;
+.logo {
+  height: 25px;
+  padding: 10px;
+
+  img {
+  -webkit-filter:  grayscale(100%) brightness(80%) contrast(10000000%);
+    opacity: .8;
+  ;
+
+  }
 }
 
-/* User Avatar */
+// /* User Avatar */
 .navbar-wagon .avatar {
   height: 35px;
   width: 35px;
@@ -23,26 +37,42 @@
 }
 
 /* Right section */
-.navbar-wagon-right {
+.navbar-right {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  font-family: 'hk_groteskbold';
+  font-size: 9px;
+  line-height: 1;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #000;
+  padding-right: 10px;
+  padding-bottom: 4px;
+  border-bottom: 3px solid transparent;
+  text-decoration: none;
+  margin-right: 20px;
+
 }
 
 /* Basic navbar item */
-.navbar-wagon-item {
+.navbar-item {
   cursor: pointer;
-  padding: 0 20px;
+  padding: 20px;
+  margin: 10px;
+  justify-content: space-between;
+  color: #000;
 }
 
 /* Navbar link */
 .navbar-wagon-link {
   color: #616668;
-  font-size: 14px;
+  font-size: 13px;
 }
 .navbar-wagon-link:hover {
-  color: #da552f;
-  text-decoration: none;
+  color: black;
+  transition: all 0.25s ease-in-out;
+  text-decoration: underline;
 }
 
 /* Dropdown menu */
@@ -52,7 +82,7 @@
   border-color: #E6E6E6;
 }
 .navbar-wagon-dropdown-menu li > a {
-  transition: color 0.3s ease;
+  transition: all 0.25s ease-in-out;
   font-weight: lighter !important;
   color: #999999 !important;
   font-size: 15px !important;
@@ -61,7 +91,7 @@
 }
 .navbar-wagon-dropdown-menu li > a:hover {
   background: transparent !important;
-  color: black !important;
+  color: #CCAA50 !important;
 }
 .navbar-wagon-dropdown-menu:before {
   content: ' ';
@@ -75,3 +105,17 @@
   border-left: 1px solid #E6E6E6;
   border-top: 1px solid #E6E6E6;
 }
+.search-bar {
+    border-bottom: 1px solid #fff;
+    color: black;
+    width: 100px;
+    padding: 3px;
+    border: none;
+    background: 0 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-family: 'hk_groteskbold';
+    font-size: 13px;
+    line-height: 1.5;
+}
+

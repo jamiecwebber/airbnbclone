@@ -1,9 +1,8 @@
-<h1>All bookings for <%= current_user.first_name %>  <%=current_user.last_name %></h1>
-<% @bookings.each do |booking| %>
-	<div class="booking-card">
-		<h2><%= booking.apartment.name %></h2>
-		<p><%= booking.enter_date %> to <%= booking.exit_date %></p>
-		<p>Price per night: <%= booking.apartment.price_per_day %></p>
-		<p>Total price: <%= booking.price_total %></p>
-	</div>
+<!-- /views/booking/index -->
+<% if @bookings.size < 1 %>
+  <h4>Looks like you haven't scheduled any trips yet!</h4>
+<% else %>
+  <%= render "bookings-list" %>
 <% end %>
+
+

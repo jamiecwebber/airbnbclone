@@ -1,7 +1,7 @@
 class ApartmentsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
-  # GET /apartments
 
+  # GET /apartments
   def index
     @apartments = Apartment.all
 
@@ -9,6 +9,7 @@ class ApartmentsController < ApplicationController
   end
 
   def show
+    @booking = Booking.new
     @apartment = Apartment.find(params[:id])
   end
 
@@ -31,8 +32,7 @@ class ApartmentsController < ApplicationController
 
   def update
     @apartment = Apartment.find(params[:id])
-    @apartment.update(apartment_params)
-    if @apartment.save
+    if @apartment.update(apartment_params)
       redirect_to apartment_path(@apartment)
     else
       render :edit
@@ -49,7 +49,7 @@ class ApartmentsController < ApplicationController
      private
 
   def apartment_params
-    params.require(:apartment).permit(:user_id, :price_per_day, :category, :name, :description, :location)
+    params.require(:apartment).permit(:user_id, :price_per_day, :category, :name, :description, :location, :upload_photos)
   end
 end
 

@@ -41,6 +41,32 @@ def generate_appartment(id)
   new_appartment.save
 end
 
+# Generates a booking and review for each non-apartment owning user
+def generate_booking
+  start_date = Time.now - rand(15552000)
+  end_date = start_date + rand(100000..1000000)
+  new_booking = Booking.new ({
+    user_id: rand(55..95),
+    apartment_id: rand(1..45),
+    price_total: rand(0..100000),
+    enter_date: start_date,
+    exit_date: end_date
+  })
+  p "Booking: #{new_booking}"
+  new_booking.save
+  generate_review(new_booking)
+end
+
+def generate_review(booking)
+  new_review = Review.new({
+    content: Faker::Restaurant.review,
+    rating: rand(0..5),
+    booking_id: booking.id
+  })
+  p "Review: #{new_review}"
+  new_review.save
+end
+
 # Returns an array of 100 profiles
 def user_api_call
   api_key = "33d7ed1cc08d6f5586e8dd45dd409b"
@@ -55,30 +81,8 @@ end
 
 # Splitting 100 users into 'guests' and 'owners'
 array_of_users = user_api_call
-guests = array_of_users[0...49]
-hosts = array_of_users[49..99]
-
-# Generating 50 user objects and saving to database.
-guests.each do |user|
-  first_name = user["name"].split(" ")[0]
-  last_name = user["name"].split(" ")[1]
-  email = user["email"]
-  bio = bio_generator # See line 15 for method definition
-  photos = user["photo"]
-
-  new_user = User.new({
-    owner: false,
-    first_name: first_name,
-    last_name: last_name,
-    password: Faker::Address.city,
-    email: email,
-    bio: bio,
-    photos: photos,
-    password: first_name + last_name
-    })
-  p new_user
-  new_user.save
-end
+hosts = array_of_users[0...49]
+guests = array_of_users[49..99]
 
 # Generating 50 host objects and saving to database.
 hosts.each do |user|
@@ -96,12 +100,44 @@ hosts.each do |user|
     email: email,
     bio: bio,
     photos: photos,
-    password: first_name + last_name
   })
+
+  p "Hosts: #{new_user}"
   new_user.save
 
   generate_appartment(new_user.id)
 end
+
+# Generating 50 user objects and saving to database.
+guests.each do |user|
+  first_name = user["name"].split(" ")[0]
+  last_name = user["name"].split(" ")[1]
+  email = user["email"]
+  bio = bio_generator # See line 15 for method definition
+  photos = user["photo"]
+
+  new_user = User.new({
+    owner: false,
+    first_name: first_name,
+    last_name: last_name,
+    password: Faker::Address.city,
+    email: email,
+    bio: bio,
+    photos: photos,
+    })
+
+  p "Guests: #{new_user}"
+  new_user.save
+end
+
+# Seeding bookings and reviews
+1000.times do
+  generate_booking
+end
+
+
+
+
 
 
 
