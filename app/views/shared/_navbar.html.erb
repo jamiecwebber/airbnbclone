@@ -14,6 +14,15 @@
       <%= link_to "Apartments", apartments_path, class: "navbar-item navbar-wagon-link" %>
       <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: "navbar-item navbar-wagon-link" %>
 
+
+      <form class="form-search" method="get" id="s" action="/">
+        <div>
+          <input type="text" class="search-bar" placeholder="search..." name=" " autocomplete="off">
+       </div>
+      </form>
+
+
+
       <!-- Avatar with dropdown menu -->
       <div class="navbar-wagon-item">
         <div class="dropdown">

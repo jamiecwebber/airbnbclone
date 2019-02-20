@@ -13,15 +13,20 @@
   justify-content: space-between;
   overflow: hidden;
   position: fixed;
+  z-index:1;
 }
 
 /* Logo */
 .logo {
   height: 25px;
   padding: 10px;
-  opacity: 20;
-  filter: alpha(opacity=50);
 
+  img {
+  -webkit-filter:  grayscale(100%) brightness(80%) contrast(10000000%);
+    opacity: .8;
+  ;
+
+  }
 }
 
 // /* User Avatar */
@@ -62,7 +67,7 @@
 /* Navbar link */
 .navbar-wagon-link {
   color: #616668;
-  font-size: 14px;
+  font-size: 13px;
 }
 .navbar-wagon-link:hover {
   color: black;
@@ -100,3 +105,17 @@
   border-left: 1px solid #E6E6E6;
   border-top: 1px solid #E6E6E6;
 }
+.search-bar {
+    border-bottom: 1px solid #fff;
+    color: black;
+    width: 100px;
+    padding: 3px;
+    border: none;
+    background: 0 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-family: 'hk_groteskbold';
+    font-size: 13px;
+    line-height: 1.5;
+}
+
