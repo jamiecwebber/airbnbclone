@@ -44,10 +44,10 @@
         <% end %>
       </div>
       <div class="user-details">
-        <p><strong>Host Since:</strong><%= @apartment.user.created_at %></p>
-        <p><strong>Name:</strong><%= @apartment.user.first_name %> <%= @apartment.user.last_name %>
-        </p>
-        <p><strong>Bio:</strong><%= @apartment.user.bio %></p>
+        <h1 class="white"><%= @apartment.user.first_name %> <%= @apartment.user.last_name %>
+        </h1>
+        <p><strong>Host Since:</strong> <%= @apartment.user.created_at %></p>
+        <p><strong>Bio:</strong> <%= @apartment.user.bio %></p>
       </div>
       <div class="apartment-details">
         <h1 class="white"> <%= @apartment.name %></h1>
@@ -55,7 +55,7 @@
         <p> <strong>Name:</strong> <%=  @apartment.name %> </p>
         <p> <strong>Price:</strong> <%=  @apartment.price_per_day %></p>
         <p> <strong>Theme:</strong> <%=  @apartment.category %></p>
-        <p> <strong>Location:</strong> <%=  @apartment.description %></p>
+        <p> <strong>Description:</strong> <%=  @apartment.description %></p>
         <p> <strong>Location:</strong> <%=  @apartment.location %></p>
       </div>
     </div>
