@@ -10,8 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_20_161633) do
-
+ActiveRecord::Schema.define(version: 2019_02_20_215411) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,7 +25,7 @@ ActiveRecord::Schema.define(version: 2019_02_20_161633) do
     t.string "photos"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.json "upload_photos"
+    t.string "upload_photos"
     t.index ["user_id"], name: "index_apartments_on_user_id"
   end
 
