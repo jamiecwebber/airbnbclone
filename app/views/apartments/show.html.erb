@@ -35,6 +35,19 @@
 
   <div class="row">
     <div class="col-xs-12 col-sm-6">
+      <div class="apartment-user-avatar">
+        <% if @apartment.user.photos %>
+          <img src="<%= @apartment.user.photos %>" alt="">
+        <% else %>
+          <img src="<%= cl_image_tag @apartment.user.upload_photos unless @apartment.user.upload_photos.blank?  %>" alt="">
+        <% end %>
+      </div>
+      <div class="user-details">
+        <p>Host Since: <%= @apartment.user.created_at %></p>
+        <p>Name: <%= @apartment.user.first_name %> <%= @apartment.user.last_name %>
+        </p>
+        <p>Bio: <%= @apartment.user.bio %></p>
+      </div>
       <div class="apartment-details">
         <h1> <%= @apartment.name %></h1>
         <p>Here is a description of your apartment: </p>

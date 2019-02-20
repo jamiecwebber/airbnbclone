@@ -9,7 +9,7 @@ class ApartmentsController < ApplicationController
   end
 
   def show
-    @booking = Booking.new()
+    @booking = Booking.new
     @apartment = Apartment.find(params[:id])
   end
 
@@ -32,8 +32,7 @@ class ApartmentsController < ApplicationController
 
   def update
     @apartment = Apartment.find(params[:id])
-    @apartment.update(apartment_params)
-    if @apartment.save
+    if @apartment.update(apartment_params)
       redirect_to apartment_path(@apartment)
     else
       render :edit
