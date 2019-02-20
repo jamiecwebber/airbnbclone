@@ -150,7 +150,7 @@ farrah = User.new({
     owner: true,
     first_name: "Farrah",
     last_name: "Fun",
-    photos: "https://commons.wikimedia.org/wiki/File:Lauren_Tewes.jpg",
+    photos: "https://upload.wikimedia.org/wikipedia/commons/b/bd/Lauren_Tewes.jpg",
     bio: "Hi, I am Farrah. I have travelled the world as a professional mermaid. I have travelled by sea and battled great serpants in the briny depths. Come join me in my house boat on the coast of Halifax.",
     email: "farrah@email.com",
     password: "lewagon"
