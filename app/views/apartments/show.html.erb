@@ -3,11 +3,12 @@
   <div class="row">
     <div class="col-xs-12">
       <div class="apartment-photo-collage">
-        <% unless @apartment.photos.nil? %>
+        <% if @apartment.photos %>
           <img src=<%= @apartment.photos%> width="200" height="200" >
           <div class="box-name"><p><%= @apartment.user.first_name %>'s <%= @apartment.name %></p></div>
         <% else %>
-          <%=cl_image_tag(@apartment.upload_photos) unless @apartment.upload_photos.blank? %>
+          <img id="image-hack" src=<%= cl_image_path(@apartment.upload_photos) unless @apartment.upload_photos.blank? %> height="200" >
+          <div class="box-name"><p><%= @apartment.user.first_name %>'s <%= @apartment.name %></p></div>
         <% end %>
       </div>
     </div>
