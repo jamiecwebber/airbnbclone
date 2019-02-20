@@ -135,9 +135,27 @@ end
   generate_booking
 end
 
+darryl = User.new({
+    owner: false,
+    first_name: "Darryl",
+    last_name: "Downer",
+    photos: "https://i.kym-cdn.com/photos/images/original/000/839/199/8a9.jpg",
+    bio: "Hi, I am Darryl. I am married with two adult children. I am looking to put some adventure and romance in my life.",
+    email: "darryl@email.com",
+    password: "lewagon"
+})
+darryl.save
 
-
-
+farrah = User.new({
+    owner: true,
+    first_name: "Farrah",
+    last_name: "Fun",
+    photos: "https://commons.wikimedia.org/wiki/File:Lauren_Tewes.jpg",
+    bio: "Hi, I am Farrah. I have travelled the world as a professional mermaid. I have travelled by sea and battled great serpants in the briny depths. Come join me in my house boat on the coast of Halifax.",
+    email: "farrah@email.com",
+    password: "lewagon"
+})
+farrah.save
 
 
 

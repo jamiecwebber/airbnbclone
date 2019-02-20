@@ -1,8 +1,48 @@
 // Specific CSS for your home-page
+body {
+  margin: 0 70px;
+}
+
+.btn {
+  width: auto;
+  background-color: #8c8c8c;
+  border: none;
+}
+
+.apartments-banner {
+  position: relative;
+  color: white;
+}
+
+#header-image {
+  height: 55vh;
+  background: linear-gradient(-170deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.5) 100%), url('https://images.unsplash.com/photo-1493849749377-e4f82d0a8319?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2848&q=80');
+  background-position: center;
+  background-size: cover;
+  border-radius: 0px 0px 10px 10px;
+}
+
+#header-title {
+  padding-left: 45px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#card-container {
+}
+
+#header-text {
+  background: rgba(0,0,0,0.2);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  border-radius: 0px 0px 10px 10px;
+}
+
 .main-container {
-	width: 80%;
 	min-width: 250px;
-	margin: 70px auto;
+	margin: 70px auto 0px;
 }
 
 p {
@@ -76,7 +116,6 @@ p {
 
 
 #near-you {
-
 }
 
 #become-a-host {

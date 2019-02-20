@@ -1,10 +1,17 @@
-<div id="header-text">
-  <h1>Come Live With Us</h1>
-  <h2>Fascinating experiences with fascinating people</h2>
-  <p><em>People are awesome!</em> That's what we believe. At Come Live With Us you can visit with interesting people from all walks of life. Sign up to spend time with circus performers, preeminent researchers, famous entertainers, successful entrepreneurs, and so much more! Check out a few of the experiences we have to offer: </p>
+<div class="apartments-banner">
+  <div id="header-image"></div>
+  <div id="header-title">
+    <h1>Come Live With Us</h1>
+    <span id="banner-typed-text"></span>
+  </div>
+  <div id="header-text">
+    <p><em>People are awesome!</em> That's what we believe. At Come Live With Us you can visit with interesting people from all walks of life. Sign up to spend time with circus performers, preeminent researchers, famous entertainers, successful entrepreneurs, and so much more! Check out a few of the experiences we have to offer: </p>
+    </div>
+  </div>
 </div>
 
 <div id="card-container">
+  <h2>Your Next Adventure is Just One click Away...</h2>
   <div class="scrolling-wrapper">
     <% @apartments.reverse_each do |apartment| %>
         <!-- <div class="col-sm-6 col-lg-4"> -->
@@ -31,6 +38,6 @@
 <div id="become-a-host">
   <h2>Become a host!</h2>
   <p>Are you an <em>interesting person</em>? Have you done things that other people want to hear about? Do you live in a unique and unusual place that you'd like to share with the world? Do you want to make a buck entertaining guests and bringing people into your world? Get in touch with us and we'll walk you through the process of setting up to host with Come Live With Us!</p>
-  <%= link_to "upload your nifty new experience", new_apartment_path, class:"btn btn-success" %>
+  <%= link_to "Upload your nifty new experience", new_apartment_path, class:"btn btn-success" %>
 </div>
 

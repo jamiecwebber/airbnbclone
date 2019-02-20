@@ -1,4 +1,5 @@
-<h1>Booking details for <%= @apartment.name %></h1>
+<div class="bookings-container">
+	<h1>Booking details for <%= @apartment.name %></h1>
 <table>
 	<tr>
 		<td>Start date:</td>  <td><%= @booking.enter_date %></td>
@@ -16,3 +17,6 @@
 		<td>Total cost:</td><td> <%= @booking.price_total %></td>
 	</tr>
 </table>
+
+<%= link_to "See all your bookings", bookings_path, class:"btn" %>
+</div>
