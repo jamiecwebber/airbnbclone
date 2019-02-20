@@ -1,0 +1,11 @@
+<h1><%= current_user.first_name %>  <%=current_user.last_name %>: Here Are Your Upcoming Trips</h1>
+<% @bookings.each do |booking| %>
+  <div class="booking-card">
+    <h4><%= booking.apartment.name %></h4>
+    <p><%= booking.enter_date %> to <%= booking.exit_date %></p>
+    <p>Price per night: <%= booking.apartment.price_per_day %></p>
+    <p>Total price: <%= booking.price_total %></p>
+    <%= link_to("Edit This booking", edit_booking_path(booking)) %>
+    <%= link_to("Leave a review", new_booking_review_path(  booking)) %>
+  </div>
+<% end %>

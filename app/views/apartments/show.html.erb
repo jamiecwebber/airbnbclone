@@ -67,4 +67,19 @@
     </div>
   </div>
 
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="apartment-reviews">
+        <h1>Reviews for: <%= @apartment.name %></h1>
+        <% @apartment.bookings.reverse_each do |booking| %>
+          <div class="review-card">
+            <p>Name: <%= booking.user.first_name %></p>
+            <p>Date: <%= booking.exit_date %></p>
+            <p> <%= booking.reviews[0].content %><p>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
 </div>
