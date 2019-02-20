@@ -1,4 +1,4 @@
-<h1 class="white">Make a new booking</h1>
+<h1 class="black">Make a new booking</h1>
 <p><strong>Make a booking for</strong><%= @apartment.name %></p>
 <p><strong>Price per night:</strong><%= @apartment.price_per_day %></p>
 
@@ -12,5 +12,5 @@
     </div>
   </div>
   <%= f.hidden_field :apartment_id, :value => @apartment.id  %>
-  <%= f.submit "Book!", class:"btn"%>
+  <%= f.submit "Book!", class:"btn" %>
 <% end %>
