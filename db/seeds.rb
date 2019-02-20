@@ -76,7 +76,7 @@ guests.each do |user|
     photos: photos,
     password: first_name + last_name
     })
-  p new_user
+
   new_user.save
 end
 
