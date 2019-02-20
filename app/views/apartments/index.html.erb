@@ -1,11 +1,36 @@
-<h1>Your Listed Apartments</h1>
-<%= link_to "upload your nifty new experience", new_apartment_path, class:"btn btn-success" %>
-<p>Here is your current list of apartments: </p>
+<div id="header-text">
+  <h1>Come Live With Us</h1>
+  <h2>Fascinating experiences with fascinating people</h2>
+  <p><em>People are awesome!</em> That's what we believe. At Come Live With Us you can visit with interesting people from all walks of life. Sign up to spend time with circus performers, preeminent researchers, famous entertainers, successful entrepreneurs, and so much more! Check out a few of the experiences we have to offer: </p>
+</div>
 
-  <% @apartments.each do |apartment| %>
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-3"><div class="card"><%= link_to apartment.name, apartment_path(apartment.id) %></div><img src=<%= apartment.photos %>height="450" width="410"></div></div>
-      </div>
-    </div>
-  <% end %>
+<div id="card-container">
+  <div class="scrolling-wrapper">
+    <% @apartments.each do |apartment| %>
+        <!-- <div class="col-sm-6 col-lg-4"> -->
+          <%= link_to apartment_path(apartment.id) do %>
+            <div class="card">
+              <div class="gradient">
+                <h1><%= apartment.name %></h1>
+                <img src=<%= apartment.user.photos %> class="avatar">
+                <img src=<%= apartment.photos %> >
+                <p><%= apartment.description %></p>
+              </div>
+            </div>
+          <% end %>
+        <!-- </div> -->
+    <% end %>
+  </div>
+</div>
+
+<div id="near-you">
+  <h2>Experiences near you</h2>
+  <p>No need to leave town to get away from it all! Have a look at our hosts near you, you never know who might live right around the corner!</p>
+</div>
+
+<div id="become-a-host">
+  <h2>Become a host!</h2>
+  <p>Are you an <em>interesting person</em>? Have you done things that other people want to hear about? Do you live in a unique and unusual place that you'd like to share with the world? Do you want to make a buck entertaining guests and bringing people into your world? Get in touch with us and we'll walk you through the process of setting up to host with Come Live With Us!</p>
+  <%= link_to "upload your nifty new experience", new_apartment_path, class:"btn btn-success" %>
+</div>
+
