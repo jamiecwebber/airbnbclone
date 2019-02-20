@@ -1,36 +1,41 @@
 /* Main navbar */
-.navbar-wagon {
-  box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
-  background: white;
+.navbar {
+  box-shadow: 20 8px 6px -6px;
+  background: #fff;
+  width: 100%;
+  top: 0;
+  left: 0;
   transition: all 0.3s ease;
   height: 70px;
-  padding: 0px 30px;
+  padding: 0px;
   display: flex;
-  align-items: center;
+  font-family: "metropolis",sans-serif;
   justify-content: space-between;
 }
 
 /* Logo */
-.navbar-wagon-brand img {
-  height: 50px;
+.logo {
+  height: 25px;
+  padding-right: 15px;
+  padding-left: 15px;
 }
 
 /* User Avatar */
-.navbar-wagon .avatar {
-  height: 35px;
-  width: 35px;
-  border-radius: 50%;
-}
+// .navbar-wagon .avatar {
+//   height: 35px;
+//   width: 35px;
+//   border-radius: 50%;
+// }
 
 /* Right section */
-.navbar-wagon-right {
+.navbar-right {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
 /* Basic navbar item */
-.navbar-wagon-item {
+.navbar-item {
   cursor: pointer;
   padding: 0 20px;
 }
@@ -61,7 +66,7 @@
 }
 .navbar-wagon-dropdown-menu li > a:hover {
   background: transparent !important;
-  color: black !important;
+  color: #CCAA50 !important;
 }
 .navbar-wagon-dropdown-menu:before {
   content: ' ';

@@ -1,14 +1,14 @@
-<div class="navbar-wagon">
+<div class="navbar">
 
   <!-- Right Navigation -->
-  <div class="navbar-wagon-right hidden-xs hidden-sm">
+  <div class="navbar-right hidden-xs hidden-sm">
 
     <% if user_signed_in? %>
 
       <!-- Links when logged in -->
-      <%= link_to "Bookings", bookings_path, class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to "Apartments", apartments_path, class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "Bookings", bookings_path, class: "navbar-item navbar-wagon-link" %>
+      <%= link_to "Apartments", apartments_path, class: "navbar-item navbar-wagon-link" %>
+      <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: "navbar-item navbar-wagon-link" %>
 
       <!-- Avatar with dropdown menu -->
       <div class="navbar-wagon-item">
@@ -30,18 +30,21 @@
                 <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
               <% end %>
             </li>
-          </ul>
+          </ul
         </div>
       </div>
     <% else %>
       <!-- Login link (when logged out) -->
-      <%= link_to t(".sign_in", default: "Login"), user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to t(".sign_up", default: "Sign up"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to t(".sign_in", default: "Login"), user_session_path, class: "navbar-item navbar-wagon-link" %>
+      <%= link_to t(".sign_up", default: "Sign up"), new_user_session_path, class: "navbar-item navbar-wagon-link" %>
     <% end %>
   </div>
+   <div class="logo">
+      <a href="#"><img src="stylesheets/components/images/logo3.jpg"></a>
+   </div>
 
   <!-- Dropdown list appearing on mobile only -->
-  <div class="navbar-wagon-item hidden-md hidden-lg">
+  <div class="navbar-item hidden-md hidden-lg">
     <div class="dropdown">
       <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
       <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
