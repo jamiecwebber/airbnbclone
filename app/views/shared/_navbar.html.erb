@@ -1,7 +1,11 @@
 <div class="navbar">
 
+  <div class="logo">
+      <a href="#"><%= image_tag "logo3.jpg", height: 50 %></a>
+   </div>
+
   <!-- Right Navigation -->
-  <div class="navbar-right hidden-xs hidden-sm">
+  <div class="my-navbar-right hidden-xs hidden-sm">
 
     <% if user_signed_in? %>
 
@@ -30,7 +34,7 @@
                 <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
               <% end %>
             </li>
-          </ul
+          </ul>
         </div>
       </div>
     <% else %>
@@ -39,9 +43,7 @@
       <%= link_to t(".sign_up", default: "Sign up"), new_user_session_path, class: "navbar-item navbar-wagon-link" %>
     <% end %>
   </div>
-   <div class="logo">
-      <a href="#"><img src="stylesheets/components/images/logo3.jpg"></a>
-   </div>
+
 
   <!-- Dropdown list appearing on mobile only -->
   <div class="navbar-item hidden-md hidden-lg">

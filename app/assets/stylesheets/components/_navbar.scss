@@ -11,6 +11,7 @@
   display: flex;
   font-family: "metropolis",sans-serif;
   justify-content: space-between;
+  border: 1px solid blue;
 }
 
 /* Logo */
@@ -28,10 +29,12 @@
 // }
 
 /* Right section */
-.navbar-right {
+.my-navbar-right {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  border: 1px solid red;
+  padding: 0px !important;
 }
 
 /* Basic navbar item */
