@@ -6,7 +6,7 @@
 
 <div id="card-container">
   <div class="scrolling-wrapper">
-    <% @apartments.each do |apartment| %>
+    <% @apartments.reverse_each do |apartment| %>
         <!-- <div class="col-sm-6 col-lg-4"> -->
           <%= link_to apartment_path(apartment.id) do %>
             <div class="card">
