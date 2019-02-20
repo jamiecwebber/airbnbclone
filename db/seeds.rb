@@ -61,7 +61,7 @@ def generate_review(booking)
   new_review = Review.new({
     content: Faker::Restaurant.review,
     rating: rand(0..5),
-    booking_id: booking
+    booking_id: booking.id
   })
   p "Review: #{new_review}"
   new_review.save
