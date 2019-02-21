@@ -4,7 +4,7 @@ class ApartmentsController < ApplicationController
   # GET /apartments
   def index
     @apartments = Apartment.all
-
+  end
   def show
     @booking = Booking.new
     @apartment = Apartment.find(params[:id])
