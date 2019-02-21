@@ -3,8 +3,11 @@ class ApartmentsController < ApplicationController
 
   # GET /apartments
   def index
-    @apartments = Apartment.all
-
+    if params[:query].present?
+      @apartments = Apartment.global_search(params[:query])
+    else
+      @apartments = Apartment.all
+    end
     # @apartments = Apartment.where({ user_id: params[:user_id] })
   end
 
