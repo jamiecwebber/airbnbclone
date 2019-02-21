@@ -5,9 +5,6 @@ class ApartmentsController < ApplicationController
   def index
     @apartments = Apartment.all
 
-    # @apartments = Apartment.where({ user_id: params[:user_id] })
-  end
-
   def show
     @booking = Booking.new
     @apartment = Apartment.find(params[:id])
@@ -25,6 +22,7 @@ class ApartmentsController < ApplicationController
       render :new
     end
   end
+
 
   def edit
     @apartment = Apartment.find(params[:id])
