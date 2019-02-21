@@ -9,6 +9,7 @@ class ApartmentsController < ApplicationController
   # GET /apartments
   def index
     @apartments = Apartment.all
+  end
 
   def show
     @booking = Booking.new
@@ -27,7 +28,6 @@ class ApartmentsController < ApplicationController
       render :new
     end
   end
-
 
   def edit
     @apartment = Apartment.find(params[:id])
@@ -49,7 +49,7 @@ class ApartmentsController < ApplicationController
     redirect_to apartments_path
   end
 
-     private
+  private
 
   def apartment_params
     params.require(:apartment).permit(:user_id, :price_per_day, :category, :name, :description, :location, :upload_photos)
