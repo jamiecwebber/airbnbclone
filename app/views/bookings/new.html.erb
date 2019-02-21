@@ -14,3 +14,9 @@
 	<%= f.hidden_field :apartment_id, :value => @apartment.id  %>
 	<%= f.submit "make a booking!" %>
 <% end %>
+
+<% if @booking.errors.any? %>
+  <% @booking.errors.full_messages.each do |error| %>
+    <%= error %>
+  <% end %>
+<% end %>
