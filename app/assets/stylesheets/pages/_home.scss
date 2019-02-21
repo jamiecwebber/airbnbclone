@@ -41,22 +41,29 @@ p {
   height: 70vh;
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
+  margin: 15px;
 }
 
 .box-left {
+  flex: 0 0 50%;
   height: 100%;
-  margin: 20px;
-  border: 1px solid black;
+  margin-left: -50px;
+}
+
+#box-left-image {
+  height: 100%;
+  background-image: url('https://images.unsplash.com/photo-1548142813-c348350df52b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=935&q=80');
+  background-size: cover;
+  background-position: center;
 }
 
 .box-right {
-  margin: 20px;
-  border: 1px solid black;
+  text-align: left;
+  flex: 0 0 50%;
+  margin: 50px;
 }
 
 .box-image {
-  border: 1px solid rgba(0,0,0,0.2);
   width: 10vw;
   flex: 0 0 20%;
   background-size: cover;
