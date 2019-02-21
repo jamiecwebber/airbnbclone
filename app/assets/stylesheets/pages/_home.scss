@@ -1,43 +1,118 @@
-// Specific CSS for your home-page
-body {
-  margin: 0 70px;
+// Reflector
+.reflectBelow {
+  -webkit-box-reflect: below 0
+    -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(0.9, transparent), to(white));
 }
 
-.btn {
-  width: auto;
-  background-color: #8c8c8c;
-  border: none;
+// Specific CSS for your home-page
+body {
+  margin: 0;
+  background-color: white;
+}
+
+h2 {
+  padding-top: 50px;
+  margin-top: 50px;
+  text-align: center;
 }
 
 .apartments-banner {
   position: relative;
   color: white;
+  width: 100vw;
+  height: 100vh;
+}
+
+.box-container {
+  padding: 20px;
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.box-left {
+  height: 100%;
+  margin: 20px;
+  border: 1px solid black;
+}
+
+.box-right {
+  margin: 20px;
+  border: 1px solid black;
+}
+
+.box-image {
+  border: 1px solid rgba(0,0,0,0.2);
+  width: 10vw;
+  flex: 0 0 20%;
+  background-size: cover;
+  background-position: center;
+  margin-right: -80px;
+  transition: all 0.5s ease;
+  &:hover {
+    margin-right: 0px;
+    transition: all 0.5 ease;
+  }
+}
+
+#pic1 {
+  background-image: url('https://images.unsplash.com/photo-1504834636679-cd3acd047c06?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80');
+}
+#pic2 {
+  background-image: url('https://images.unsplash.com/photo-1493321384838-70c5a85ba487?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1009&q=80');
+}
+#pic3 {
+  background-image: url('https://images.unsplash.com/photo-1548197001-ca380947be91?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80');
+}
+#pic4 {
+  background-image: url('https://images.unsplash.com/photo-1541481743801-6a6b65818bdb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80');
+}
+#pic5 {
+  background-image: url('https://images.unsplash.com/photo-1524940341013-28b7a45da417?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1001&q=80');
+}
+
+
+.wrapper-grey {
+  background-color: #f9f9f9 ;
 }
 
 #header-image {
-  height: 55vh;
+  margin-top: -70px;
+  width: 100vw;
+  height: 100vh;
   background: linear-gradient(-170deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.5) 100%), url('https://images.unsplash.com/photo-1493849749377-e4f82d0a8319?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2848&q=80');
   background-position: center;
   background-size: cover;
-  border-radius: 0px 0px 10px 10px;
 }
 
 #header-title {
   padding-left: 45px;
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 50%;
+  left: 48%;
 }
 
 #card-container {
+  padding: 50px;
 }
+
+#search-bar {
+  width: 500px;
+}
+
+
+#search-field {
+  width: 62%;
+  color: black;
+}
+
 
 #header-text {
   background: rgba(0,0,0,0.2);
   position: absolute;
   bottom: 0;
   left: 0;
-  border-radius: 0px 0px 10px 10px;
 }
 
 .main-container {
@@ -67,7 +142,7 @@ p {
 		top: 0px; left: 0px;
 		width: 100%;
 		height: 100%;
-		z-index: -1;
+		z-index: 0;
 	}
 	.avatar {
 		position: absolute;
@@ -112,10 +187,6 @@ p {
 		width: 100%; height: 100%;
 	}
 
-}
-
-
-#near-you {
 }
 
 #become-a-host {

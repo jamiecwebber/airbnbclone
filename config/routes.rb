@@ -1,7 +1,12 @@
 Rails.application.routes.draw do
   devise_for :users, :controllers => { registrations: 'registrations' }
 
-  resources :apartments
+  resources :apartments do
+    collection do
+      get :mine
+    end
+  end
+
   resources :bookings do
     resources :reviews, only: [:new, :create, :index]
   end

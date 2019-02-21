@@ -1,6 +1,11 @@
 class ApartmentsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
+  # User Apartments
+  def mine
+    @apartments = Apartment.where(user: current_user)
+  end
+
   # GET /apartments
   def index
     @apartments = Apartment.all

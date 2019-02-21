@@ -8,6 +8,7 @@
     <%= action_cable_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all' %>
     <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
+    <meta id="controller-action" data-controller="<%= controller_name %>" data-method="<%= action_name %>">
   </head>
   <body>
      <%= render 'shared/navbar' %>
@@ -19,7 +20,7 @@
       <p class="notice"><%= notice %></p>
       <p class="alert"><%= alert %></p>
   </body>
-   <hr></hr>
+   <hr>
   <footer>
     <p><small>&copy; 2019, Clone Airb&b, LeWagon Team</small></p>
     <p><small>Contact Us: <a href="mailto:taylor.caitie@gmail.com?subject=Hi%20there!">_______@gmail.com</small></p>
