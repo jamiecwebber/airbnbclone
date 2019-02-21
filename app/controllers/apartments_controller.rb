@@ -9,6 +9,7 @@ class ApartmentsController < ApplicationController
   # GET /apartments
   def index
     @apartments = Apartment.all
+  end
 
   def show
     @booking = Booking.new
@@ -55,4 +56,3 @@ class ApartmentsController < ApplicationController
     params.require(:apartment).permit(:user_id, :price_per_day, :category, :name, :description, :location, :upload_photos)
   end
 end
-
