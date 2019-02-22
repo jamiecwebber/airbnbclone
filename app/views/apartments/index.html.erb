@@ -37,8 +37,13 @@
               <div class="card">
                 <div class="gradient">
                   <h1><%= apartment.name %></h1>
-                  <img src=<%= apartment.user.photos %> class="avatar">
-                  <img src=<%= apartment.photos %> >
+                  <% if apartment.photos %>
+                    <img src=<%= apartment.user.photos %> class="avatar">
+                    <img src=<%= apartment.photos %> class="card-photo">
+                  <% else %>
+                    <img src=<%= apartment.user.upload_photos unless apartment.user.upload_photos.blank?%> class="avatar">
+                    <img src=<%= apartment.upload_photos unless apartment.upload_photos.blank? %>  class="card-photo">
+                  <% end %>
                   <p><%= apartment.description %></p>
                 </div>
               </div>
