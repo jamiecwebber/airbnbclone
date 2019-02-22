@@ -1,6 +1,8 @@
 source 'https://rubygems.org'
 ruby '2.5.3'
 
+gem 'pg_search'
+
 # Front End Gems
 gem 'simple_form'
 gem 'dotenv-rails', groups: [:development, :test]
