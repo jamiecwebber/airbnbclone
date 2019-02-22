@@ -4,14 +4,20 @@ const count = (start) => {
  return finish
 }
 
-const slideShow = document.querySelectorAll(“.scroll-item”).forEach((card) => {
- card.addEventListener(“mousemove”, (event) => {
-   let start = event.timeStamp;
-   // console.log(start)
-   console.log(count(start))
-   event.currentTarget.setAttribute(“style”, `left: ${count(start)}px`);
- })
-})
+// const slideShow = document.querySelectorAll('.scroll-item')
+// .forEach((card) => {
+//  card.addEventListener('mousemove', (event) => {
+//    let start = event.timeStamp;
+//    // console.log(start)
+//    console.log(count(start))
+//    event.currentTarget.setAttribute('style', `left: ${count(start)}px`);
+//  })
+// })
+
+// for (let index = 0; index < 10000; index++) {
+//   let push = -(index / 100)
+//   slideShow.setAttribute('style', `left: ${push}px`);
+// }
 
 // document.addEventlistener(“mousemove”, (event) => {
 //   slideShow
