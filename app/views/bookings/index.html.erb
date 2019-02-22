@@ -1,8 +1,11 @@
 <!-- /views/booking/index -->
+<style>
+h4 {text-align: center;}
+</style>
 <div class="bookings-container" >
 	<% if @bookings.size < 1 %>
+    <h4>Looks like you haven't scheduled any trips yet!</h4>
 	  <div class="booking-card">
-	  	<h4>Looks like you haven't scheduled any trips yet!</h4>
 	  </div>
 	<% else %>
 	  <%= render "bookings-list" %>
