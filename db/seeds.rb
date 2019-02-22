@@ -135,27 +135,27 @@ end
   generate_booking
 end
 
-Iris = User.new({
+iris = User.new({
     owner: true,
     first_name: "Iris",
     last_name: "Apfel",
     photos: "https://i.pinimg.com/originals/62/bf/53/62bf533eb0ab8f061edd81b0d6d0c2b2.jpg",
-    bio: "I am a conceptual textile artist. As a child I ran away with a gypsy caravan which has had a major influence on my art and my spirit.In my twenties I established myself as an artist but spiritually felt more connected to peasantry as a statement which allowed me to disconnect from the influences of the nouveau riche.  I then began see my the human body as a veritable canvas and on any none human form.  This total rejection of textiles inspired an existential crisis in me during which I began to see textiles as purer body for painting as it could not be influenced by the negativity of the human spirit. ",
+    bio: "I am a conceptual textile artist. As a child I ran away with a gypsy caravan which has had a major influence on my art and my spirit. In my twenties I established myself as an artist but spiritually felt more connected to peasantry as a statement which allowed me to disconnect from the influences of the nouveau riche.  I then began see my the human body as a veritable canvas and on any none human form.  This total rejection of textiles inspired an existential crisis in me during which I began to see textiles as purer body for painting as it could not be influenced by the negativity of the human spirit. ",
     email: "iris@email.com",
     password: "lewagon"
 })
 iris.save
 
-farrah = User.new({
+lilly = User.new({
     owner: false,
-    first_name: "Farrah",
+    first_name: "Lilly",
     last_name: "Tomer",
     photos: "https://66.media.tumblr.com/b00ec0b1e5ebab98f3d916d80927a216/tumblr_pcb521MCfC1uqvofpo1_1280.jpg",
-    bio: "Hi, I am Farrah. I am in my thirties and I have saved up some money to travel. I love the idea that this site affords me the opportunity to travel but also experience a new city like a local who has thrived in that city.
-    email: "farrah@email.com",
+    bio: "Hi, I am Lilly. I am in my thirties and I have saved up some money to travel. I love the idea that this site affords me the opportunity to travel but also experience a new city like a local who has thrived in that city."
+    email: "lilly@email.com",
     password: "lewagon"
 })
-farrah.save
+lilly.save
 
 
 
