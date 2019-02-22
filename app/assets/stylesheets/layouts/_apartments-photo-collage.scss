@@ -104,15 +104,12 @@
 }
 
 .apartment-controls {
-  // border: 1px solid black;
-  align-items: center;
-  margin: 20px;
+  width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  margin: 10px;
   position: absolute;
-  top: 600px;
-  left: 300px;
-  display: block;
+  bottom: 15px;
 }
 
 .apartment-user-avatar {
@@ -146,6 +143,7 @@
 }
 
 .box-name {
+
   position: absolute;
   display: flex;
   background-color: #7A7D7D;

@@ -10,27 +10,30 @@
         <% else %>
           <img class="host-avatar" src="<%= cl_image_path(@apartment.user.upload_photos) unless @apartment.user.upload_photos.blank? %>">
         <% end %>
+
         <div class="apartment-controls">
-        <div class="btn">
-          <%= link_to "Edit", edit_apartment_path %>
-        </div>
-        <div class="btn">
-         <%= link_to "Delete", apartment_path,
-            method: :delete,
-            data: { confirm: "Are you sure?" } %>
-        </div>
-        <div class="btn">
+          <div class="btn my-btn">
+            <%= link_to "Edit", edit_apartment_path %>
+          </div>
+          <div class="btn my-btn">
+           <%= link_to "Delete", apartment_path,
+              method: :delete,
+              data: { confirm: "Are you sure?" } %>
+          </div>
+          <div class="btn my-btn">
           <%= link_to "Book", new_booking_path({apartment_id: @apartment.id}) %>
+          </div>
+          <div class="btn my-btn">
+            <%= link_to "Back", apartments_path %>
+          </div>
         </div>
-        <div class="btn">
-          <%= link_to "Back", apartments_path %>
-        </div>
-      </div>
+
         <% if @apartment.photos %>
           <img src=<%= @apartment.photos%> width="200" height="200" >
         <% else %>
           <img id="image-hack" src=<%= cl_image_path(@apartment.upload_photos) unless @apartment.upload_photos.blank? %> height="200" >
-          <div class="box-name"><p><%= @apartment.user.first_name %>'s <%= @apartment.name %></p></div>
+          <div class="box-name"><p><%= @apartment.user.first_name %>'s <%= @apartment.name %></p>
+          </div>
         <% end %>
       </div>
     </div>
