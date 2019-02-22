@@ -135,23 +135,23 @@ end
   generate_booking
 end
 
-darryl = User.new({
-    owner: false,
-    first_name: "Darryl",
-    last_name: "Downer",
-    photos: "https://i.kym-cdn.com/photos/images/original/000/839/199/8a9.jpg",
-    bio: "Hi, I am Darryl. I am married with two adult children. I am looking to put some adventure and romance in my life.",
-    email: "darryl@email.com",
+Iris = User.new({
+    owner: true,
+    first_name: "Iris",
+    last_name: "Apfel",
+    photos: "https://i.pinimg.com/originals/62/bf/53/62bf533eb0ab8f061edd81b0d6d0c2b2.jpg",
+    bio: "I am a conceptual textile artist. As a child I ran away with a gypsy caravan which has had a major influence on my art and my spirit.In my twenties I established myself as an artist but spiritually felt more connected to peasantry as a statement which allowed me to disconnect from the influences of the nouveau riche.  I then began see my the human body as a veritable canvas and on any none human form.  This total rejection of textiles inspired an existential crisis in me during which I began to see textiles as purer body for painting as it could not be influenced by the negativity of the human spirit. ",
+    email: "iris@email.com",
     password: "lewagon"
 })
-darryl.save
+iris.save
 
 farrah = User.new({
-    owner: true,
+    owner: false,
     first_name: "Farrah",
-    last_name: "Fun",
-    photos: "https://static.independent.co.uk/s3fs-public/thumbnails/image/2015/08/02/09/Zoolander-2.jpg?w968",
-    bio: "Hi, I am Farrah. I have travelled the world as a professional mermaid. I have travelled by sea and battled great serpants in the briny depths. Come join me in my house boat on the coast of Halifax.",
+    last_name: "Tomer",
+    photos: "https://66.media.tumblr.com/b00ec0b1e5ebab98f3d916d80927a216/tumblr_pcb521MCfC1uqvofpo1_1280.jpg",
+    bio: "Hi, I am Farrah. I am in my thirties and I have saved up some money to travel. I love the idea that this site affords me the opportunity to travel but also experience a new city like a local who has thrived in that city.
     email: "farrah@email.com",
     password: "lewagon"
 })
