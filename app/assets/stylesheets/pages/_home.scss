@@ -29,10 +29,11 @@ p {
   color: red;
 }
 
+
 .apartments-banner {
   position: relative;
   color: white;
-  width: 100vw;
+  width: 100%;
   height: 100vh;
 }
 
@@ -127,6 +128,8 @@ p {
   background-size: cover;
 }
 
+
+
 #header-title {
   padding-left: 45px;
   position: absolute;
@@ -164,8 +167,9 @@ p {
 .main-container {
 	min-width: 250px;
 	margin: 70px auto 0px;
-  overflow-x:hidden;
 }
+
+
 
 p {
 	margin: 30px;

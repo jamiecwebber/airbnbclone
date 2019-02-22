@@ -8,7 +8,7 @@
         <% if @apartment.user.photos %>
           <img id="host-avatar" src="<%= @apartment.user.photos %>">
         <% else %>
-          <img class="host-avatar" src="<%= cl_image_path(@apartment.user.upload_photos) unless @apartment.user.upload_photos.blank? %>">
+          <img id="host-avatar" src="<%= cl_image_path(@apartment.user.upload_photos) unless @apartment.user.upload_photos.blank? %>">
         <% end %>
 
         <div class="apartment-controls">

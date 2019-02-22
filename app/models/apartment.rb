@@ -5,7 +5,7 @@ class Apartment < ApplicationRecord
   has_many :bookings
   has_many :reviews, through: :bookings
 
-  validates :price_per_day, :category, :name, :description, :location, :photos, presence: true, allow_blank: false
+  validates :price_per_day, :category, :name, :description, :location, presence: true, allow_blank: false
 
   include PgSearch
   pg_search_scope :global_search,

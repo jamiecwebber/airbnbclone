@@ -11,10 +11,12 @@
     <meta id="controller-action" data-controller="<%= controller_name %>" data-method="<%= action_name %>">
   </head>
   <body>
-     <%= render 'shared/navbar' %>
-    <div class="main-container">
-      <%= yield %>
-    </div>
+    <%= render 'shared/navbar' %>
+    
+      <div class="main-container">
+        <%= yield %> 
+      </div>
+    
       <%= javascript_include_tag 'application' %>
       <%= javascript_pack_tag 'application' %>
       <p class="notice"><%= notice %></p>
