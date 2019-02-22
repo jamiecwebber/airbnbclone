@@ -1,10 +1,5 @@
 <div class="container <%= @apartment.category %>">
 
-  <div class="row">
-    <div class="col-xs-12 col-sm-6">
-
-    </div>
-  </div>
 
 
   <div class="row">
@@ -15,19 +10,7 @@
         <% else %>
           <img class="host-avatar" src="<%= cl_image_path(@apartment.user.upload_photos) unless @apartment.user.upload_photos.blank? %>">
         <% end %>
-        <% if @apartment.photos %>
-          <img src=<%= @apartment.photos%> width="200" height="200" >
-        <% else %>
-          <img id="image-hack" src=<%= cl_image_path(@apartment.upload_photos) unless @apartment.upload_photos.blank? %> height="200" >
-          <div class="box-name"><p><%= @apartment.user.first_name %>'s <%= @apartment.name %></p></div>
-        <% end %>
-      </div>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-xs-12">
-      <div class="apartment-controls">
+        <div class="apartment-controls">
         <div class="btn">
           <%= link_to "Edit", edit_apartment_path %>
         </div>
@@ -43,8 +26,17 @@
           <%= link_to "Back", apartments_path %>
         </div>
       </div>
+        <% if @apartment.photos %>
+          <img src=<%= @apartment.photos%> width="200" height="200" >
+        <% else %>
+          <img id="image-hack" src=<%= cl_image_path(@apartment.upload_photos) unless @apartment.upload_photos.blank? %> height="200" >
+          <div class="box-name"><p><%= @apartment.user.first_name %>'s <%= @apartment.name %></p></div>
+        <% end %>
+      </div>
     </div>
   </div>
+
+
 
   <div class="row">
     <div class="col-xs-12 col-sm-6">

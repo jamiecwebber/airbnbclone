@@ -29,13 +29,18 @@
   font-size: 30px;
 }
 
+
 .apartment-photo-collage {
   position: relative;
   padding: 0;
+  opacity: .9;
+
   // border: 1px solid black;
   img {
     width: 100%;
     height: 25%;
+    border: 1px dotted gray;
+    border-radius: 5px;
   }
 }
 
@@ -52,15 +57,21 @@
   padding-top: 10px;
   margin-top: 10px;
   background-color: #ffffff;
-  border-radius: 10px;
+  border-radius: 5px;
   opacity: 0.9;
-  border: 1px solid black;
+  border: 1px dotted gray;
   font-size: 14px;
   line-height: 1.43;
   -webkit-font-smoothing: antialiased;
    p {
-      font-size: 15px;
-      margin: 10px;
+    font-size: 16px;
+    margin: 10px;
+    font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
+}
+    h3 {
+      text-align: center;
+      font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
+
     }
 
 }
@@ -74,25 +85,34 @@
   margin-top: 10px;
   padding-bottom: 10px;
   background-color: #ffffff;
-  border-radius: 10px;
+  border-radius: 5px;
   opacity: 0.9;
-  border: 1px solid black;
+  border: 1px dotted gray;
   font-size: 14px;
   line-height: 1.43;
   -webkit-font-smoothing: antialiased;
    p {
-      font-size: 15px;
-    }
+    font-size: 16px;
+    margin: 10px;
+    font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
+}
+    h3 {
+      text-align: center;
+      font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
 
+   }
 }
 
 .apartment-controls {
   // border: 1px solid black;
-  background-color: white;
   align-items: center;
-  margin: 10px;
+  margin: 20px;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
+  position: absolute;
+  top: 600px;
+  left: 300px;
+  display: block;
 }
 
 .apartment-user-avatar {
@@ -108,16 +128,21 @@
   padding-top: 10px;
   margin-top: 10px;
   background-color: #ffffff;
-  border-radius: 10px;
+  border-radius: 5px;
   opacity: 0.9;
-  border: 1px solid black;
+  border: 1px dotted gray;
   font-size: 14px;
   line-height: 1.43;
   -webkit-font-smoothing: antialiased;
     p {
-      font-size: 15px;
-    }
-
+    font-size: 16px;
+    margin: 10px;
+    font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
+}
+    h3 {
+      text-align: center;
+      font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
+  }
 }
 
 .box-name {
@@ -139,14 +164,17 @@
   padding-top: 10px;
   margin-top: 10px;
   background-color: #ffffff;
-  border-radius: 10px;
+  border-radius: 5px;
   opacity: 0.9;
-  border: 1px solid black;
+  border: 1px dotted  gray;
   font-size: 14px;
   line-height: 1.43;
   -webkit-font-smoothing: antialiased;
+  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
+
      h3 {
       font-size: 20px;
+
     }
 }
 
@@ -154,9 +182,13 @@
   position: absolute;
   top: 20px;
   left: 20px;
-  height: 200px;
-  width: 200px;
-  border-radius: 50%;
+  height: 180px;
+  width: 180px;
+  vertical-align: middle;
+  -webkit-border-radius: 30px;
+  border-radius: 30px;
+  display: block;
+  border: 1 solid white;
 }
 
 .review-card {
