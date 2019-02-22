@@ -13,14 +13,6 @@
 
         <div class="apartment-controls">
           <div class="btn my-btn">
-            <%= link_to "Edit", edit_apartment_path %>
-          </div>
-          <div class="btn my-btn">
-           <%= link_to "Delete", apartment_path,
-              method: :delete,
-              data: { confirm: "Are you sure?" } %>
-          </div>
-          <div class="btn my-btn">
           <%= link_to "Book", new_booking_path({apartment_id: @apartment.id}) %>
           </div>
           <div class="btn my-btn">

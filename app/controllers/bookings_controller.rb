@@ -27,7 +27,7 @@ class BookingsController < ApplicationController
     if @booking.save
       redirect_to booking_path(id: @booking.id)
     else
-      render :new
+      render :edit
     end
   end
 

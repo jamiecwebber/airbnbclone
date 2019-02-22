@@ -1,4 +1,4 @@
-<h1>Edit Your Booking</h1>
+<h1 style="text-align: center;">Edit Your Booking</h1>
 <h4>You are editing your reservation for <%= @booking.apartment.user.first_name %> <%= @booking.apartment.user.last_name %> at <%= @booking.apartment.name %><h4>
 
 
@@ -10,8 +10,8 @@
     <div class="col=xs-12 col-sm-6">
       <%= f.input :exit_date, as: :date, start_year: Date.today.year, order: [:day, :month, :year], html5: true %>
     </div>
-  </div>
   <%= f.hidden_field :apartment_id, :value => @booking.apartment  %>
-  <%= f.submit "Submit", class:"btn"%>
-  <%= link_to("Cancel", bookings_path) %>
+  <%= f.submit "Submit", class:"btn btn-success" %>
+  <%= link_to("Cancel", bookings_path, class:"btn btn-success") %>
+  </div>
 <% end %>

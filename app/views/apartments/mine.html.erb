@@ -30,11 +30,17 @@
         </div>
       <% end %>
       <div class="my-card-content">
-        <p>Daily Rate: $  <%= apartment.description %></p>
+        <p>Daily Rate: $  <%= apartment.price_per_day%></p>
+        <p>Category: <%= apartment.category %></p>
         <p>Location: <%= apartment.location %></p>
-        <%= link_to(apartment_path(apartment)) do %>
+        <p>Description: <%= apartment.description %></p>
+        <%= link_to(edit_apartment_path(apartment.id)) do %>
           <button class="btn btn-success">Edit This Listing</button>
         <% end %>
+        <%= link_to apartments_path(apartment.id), method: :delete,data: { confirm: "Are you sure?" } do %>
+          <button class="btn btn-success">Remove This Listing</button>
+        <% end %>
+          </div>
       </div>
     </div>
   <% end %>
