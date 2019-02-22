@@ -169,6 +169,21 @@ p {
 	margin: 70px auto 0px;
 }
 
+.pages-container {
+  width: 80%;
+  margin: 0px auto;
+  background-color: #f9f9f9;
+}
+
+.booking-card {
+  justify-content: left;
+  margin: 30px;
+  padding: 30px;
+  border: 2px solid #b9b9b9;
+  p, h2, h3, h3 {
+    text-align: left;
+  }
+}
 
 
 p {
