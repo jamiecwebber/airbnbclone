@@ -1,45 +1,99 @@
 <div class="apartments-banner">
   <div id="header-image"></div>
   <div id="header-title">
-    <h1>Come Live With Us</h1>
+    <h1>Ready For An Adventure?</h1>
     <span id="banner-typed-text"></span>
 
-    <div class="search_bar"><%= render "shared/search" %></div>
-  </div>
-  <div id="header-text">
-    <p><em>People are awesome!</em> That's what we believe. At Come Live With Us you can visit with interesting people from all walks of life. Sign up to spend time with circus performers, preeminent researchers, famous entertainers, successful entrepreneurs, and so much more! Check out a few of the experiences we have to offer: </p>
+    <div id="search-bar">
+      <%= render "search" %>
     </div>
   </div>
 </div>
 
-<div id="card-container">
-  <h2>Your Next Adventure is Just One click Away...</h2>
-  <div class="scrolling-wrapper">
-    <% @apartments.reverse_each do |apartment| %>
-        <!-- <div class="col-sm-6 col-lg-4"> -->
-          <%= link_to apartment_path(apartment.id) do %>
-            <div class="card">
-              <div class="gradient">
-                <h1><%= apartment.name %></h1>
-                <img src=<%= apartment.user.photos %> class="avatar">
-                <img src=<%= apartment.photos %> >
-                <p><%= apartment.description %></p>
-              </div>
-            </div>
-          <% end %>
-        <!-- </div> -->
-    <% end %>
+<h2>It's Like AirBnB, but <span id="colour-word">Trippier</span></h2>
+<h3><i>We emphasize the host and not the apartment, because in the end it's the people that make the place.</i></h3>
+<p>We promise that every trip you take with us will be the Trippiest experience ever. Guranteed.<br> Otherwise I'll make Jamie give you your money back.</p>
+<div class="box-container" id="face-collage">
+  <div class="box-image" id="pic1">
+  </div>
+  <div class="box-image" id="pic2">
+  </div>
+  <div class="box-image" id="pic3">
+  </div>
+  <div class="box-image" id="pic4">
+  </div>
+  <div class="box-image" id="pic5">
   </div>
 </div>
 
-<div id="near-you">
-  <h2>Experiences near you</h2>
-  <p>No need to leave town to get away from it all! Have a look at our hosts near you, you never know who might live right around the corner!</p>
+<div class="wrapper-grey">
+  <h2>Featured Hosts</h2>
+  <h3><i>If the robots don't like em, then you probably won't either.</i></h3>
+  <p>Our host selection process is informed by cutting-edge machine-learning algorithms (because what isn't these days?) <br>As a result, we only select the most socially desirable people who definitely are not creeps and weirdos.</p>
+  <div id="card-container">
+    <div class="scrolling-wrapper">
+      <% @apartments.reverse_each do |apartment| %>
+          <!-- <div class="col-sm-6 col-lg-4"> -->
+            <%= link_to apartment_path(apartment.id) do %>
+              <div class="card">
+                <div class="gradient">
+                  <h1><%= apartment.name %></h1>
+                  <img src=<%= apartment.user.photos %> class="avatar">
+                  <img src=<%= apartment.photos %> >
+                  <p><%= apartment.description %></p>
+                </div>
+              </div>
+            <% end %>
+          <!-- </div> -->
+      <% end %>
+    </div>
+  </div>
 </div>
 
-<div id="become-a-host">
-  <h2>Become a host!</h2>
-  <p>Are you an <em>interesting person</em>? Have you done things that other people want to hear about? Do you live in a unique and unusual place that you'd like to share with the world? Do you want to make a buck entertaining guests and bringing people into your world? Get in touch with us and we'll walk you through the process of setting up to host with Come Live With Us!</p>
-  <%= link_to "Upload your nifty new experience", new_apartment_path, class:"btn btn-success" %>
+
+<h2>Add Some <span id="colour-word">Colour</span> To Your World</h2>
+<h3><i>Choose to stay with hosts from all walks of life.</i></h3>
+<p id="block3-p">At the end of the day, one thing is certain: you'll definitely have <strong>a story to tell.</strong></p>
+<div class="box-container">
+  <div class="box-left">
+    <div id="box-left-image"></div>
+  </div>
+  <div class="box-right">
+    <ul>
+      <li class="icon">
+        <i class="fas fa-paint-brush"></i>
+        <span>Artists</span>
+      </li>
+      <li class="icon">
+        <i class="fas fa-music"></i>
+        <span>Musicians</span>
+      </li>
+      <li class="icon">
+        <i class="fas fa-football-ball"></i>
+        <span>Sportsmen</span>
+      </li>
+      <li class="icon">
+        <i class="fas fa-paw"></i>
+        <span>Lion tamers</span>
+      </li>
+      <li class="icon">
+        <i class="fas fa-fist-raised"></i>
+        <span>Revolutionaries</span>
+      </li>
+        <li class="icon">
+          <i class="fab fa-reddit-alien"></i>
+        <span>Androids</span>
+      </li>
+      <li class="icon">
+        <i class="fas fa-democrat"></i>
+        <span>Unicorns</span>
+      </li>
+    </ul>
+    <p>So what are you waiting for?</p>
+    <%= render "search" %>
+  </div>
 </div>
+<%= render "footer" %>
+
+
 
