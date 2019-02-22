@@ -21,22 +21,26 @@
       <% if apartment.photos %>
         <div class="my-apartment-photos">
           <img src=<%= apartment.photos%> height="200" >
-          <p><%= apartment.user.first_name %>'s <%= apartment.name %></p>
+          <p><%= apartment.name %>'</p>
         </div>
       <% else %>
         <div class="my-apartment-photos">
           <img src=<%= cl_image_path(apartment.upload_photos) unless apartment.upload_photos.blank? %> height="200" >
-          <p><%= apartment.user.first_name %>'s <%= apartment.name %></p>
+          <p><%= apartment.name %></p>
         </div>
       <% end %>
       <div class="my-card-content">
-        <p>Name: <%= apartment.name %></p>
-        <p>Category: <%= apartment.category %> </p>
+        <p>Daily Rate: $  <%= apartment.price_per_day%></p>
+        <p>Category: <%= apartment.category %></p>
+        <p>Location: <%= apartment.location %></p>
         <p>Description: <%= apartment.description %></p>
-        <p>Price: <%= apartment.price_per_day %></p>
-        <%= link_to(apartment_path(apartment)) do %>
+        <%= link_to(edit_apartment_path(apartment.id)) do %>
           <button class="btn btn-success">Edit This Listing</button>
         <% end %>
+        <%= link_to apartments_path(apartment.id), method: :delete,data: { confirm: "Are you sure?" } do %>
+          <button class="btn btn-success">Remove This Listing</button>
+        <% end %>
+          </div>
       </div>
     </div>
   <% end %>

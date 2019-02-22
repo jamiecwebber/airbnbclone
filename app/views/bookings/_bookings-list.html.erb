@@ -1,14 +1,33 @@
-<h1><%= current_user.first_name %>  <%=current_user.last_name %>:</h1>
+<style>
+  .btn, h4 {margin-left: 20px;}
+  h4 {text-align: left;}
+  h2 {padding: 0;}
+</style>
 <h2> Here Are Your Upcoming Trips</h2>
+<div class="my-apartments-container">
 <% @bookings.each do |booking| %>
-  <div class="booking-card <%= booking.apartment.category %>">
-    <%= link_to apartment_path(booking.apartment.id) do %> 
-    	<h4><%= booking.apartment.name %></h4>
+  <div class="my-apartment-card">
+    <% if booking.apartment.user.photos %>
+      <div class="my-apartment-photos">
+        <img src=<%= booking.apartment.user.photos%> height="200" >
+        <p>Hosted by: <%= booking.apartment.user.first_name %> <%= booking.apartment.user.last_name %></p>
+      </div>
+    <% else %>
+      <div class="my-apartment-photos">
+        <img src=<%= cl_image_path(booking.apartment.user.upload_photos) unless booking.apartment.user.upload_photos.blank? %> height="200" >
+        <p>Hosted by: <%= booking.apartment.user.first_name %> <%= booking.apartment.user.last_name %></p>
+      </div>
     <% end %>
-    <p><%= booking.enter_date %> to <%= booking.exit_date %></p>
-    <p>Price per night: <%= booking.apartment.price_per_day %></p>
-    <p>Total price: <%= booking.price_total %></p>
-    <%= link_to("Edit This booking  |", edit_booking_path(booking)) %> 
-    <%= link_to("|  Leave a review", new_booking_review_path(  booking)) %>
+    <div class="my-card-content">
+      <%= link_to apartment_path(booking.apartment.id) do %>
+      <h4>At: <%= booking.apartment.name %></h4>
+      <p>Duration: <%= booking.enter_date %> to <%= booking.exit_date %></p>
+      <p>Price per night: $ <%= booking.apartment.price_per_day %></p>
+      <p>Total price: $ <%= booking.price_total %></p>
+      <%= link_to("Edit This booking", edit_booking_path(booking), class: "btn btn-success")%>
+      <%= link_to("Leave a review", new_booking_review_path(  booking), class: "btn btn-success") %>
+    </div>
   </div>
 <% end %>
+<% end %>
+</div>

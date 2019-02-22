@@ -1,9 +1,11 @@
-<h1 class="white">Write a Review</h1>
-
-<%= simple_form_for([@booking, @review])do |f| %>
-  <%= f.input :rating, collection: [1,2,3,4,5] %>
-  <%= f.text_area :content, :input_html => {:rows => 10}%>
-
-  <%= f.hidden_field :booking_id, :value => params[:id] %>
-  <%= f.submit "Leave Review!", class:"btn"%>
-<% end %>
+<style>
+  h1 {text-align: center;}
+  label {color: black;}
+</style>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-6 col-xs-offset-3">
+      <%= render "reviews-partial" %>
+    </div>
+  </div>
+</div>

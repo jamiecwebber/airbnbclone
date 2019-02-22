@@ -1,22 +1,23 @@
+<style>
+  label {color: black;}
+</style>
 <h1>Make a new booking</h1>
 <p>Make a booking for  <%= @apartment.name %></p>
 <p><strong>Price per night: </strong><%= @apartment.price_per_day %></p>
 
 <%= simple_form_for @booking do |f| %>
 	<div class="row">
-		<div class="col-xs-12 col-sm-6">
+		<div class="col-xs-6 col-xs-offset-3">
 			<%= f.input :enter_date, as: :date, start_year: Date.today.year, order: [:day, :month, :year], html5: true %>
-		</div>
-		<div class="col=xs-12 col-sm-6">
 			<%= f.input :exit_date, as: :date, start_year: Date.today.year, order: [:day, :month, :year], html5: true %>
-		</div>
-	</div>
 	<%= f.hidden_field :apartment_id, :value => @apartment.id  %>
 	<%= f.submit "make a booking!" %>
-<% end %>
-
-<% if @booking.errors.any? %>
+  <% end %>
+  <% if @booking.errors.any? %>
   <% @booking.errors.full_messages.each do |error| %>
     <%= error %>
   <% end %>
+    </div>
+  </div>
 <% end %>
+
