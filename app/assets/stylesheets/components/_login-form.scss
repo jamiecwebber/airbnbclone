@@ -1,0 +1,43 @@
+.bghack {
+  background-image: url('https://images.unsplash.com/photo-1496337589254-7e19d01cec44?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+}
+
+.loginform {
+  background-color: rgba(0,0,0,0.6);
+  padding: 50px;
+  color: white;
+  margin-top: 106px;
+  height: 443px;
+  padding-top: 0px;
+  width: 320px;
+} a {
+  color: white;
+}
+
+.form-group {
+  color: white;
+}
+
+
+.signupform {
+  background-color: rgba(0,0,0,0.5);
+  padding: 20px;
+  color: white;
+  margin-top: 20px;
+  height: 702px;
+  padding-top: 0px;
+  width: 357px;
+  .btn {
+    color: black;
+  }
+} a {
+  color: white;
+}
+
+.text-muted {
+  color: white;
+}
