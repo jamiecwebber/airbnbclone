@@ -1,14 +1,12 @@
-<% if @apartments.nil? %>
+<% if @apartments.empty? %>
   <h1>You Currently Have no Listings</h1>
   <p>Become a host: Add one now!</p>
   <%= link_to new_apartment_path do %>
   <button class="btn btn-success">Add Your First Listing!</button>
-<% end %>
+  <% end %>
 <% else %>
   <h1>Here Are your Apartments</h1>
-<% end %>
-
-<h4>These are your listed experiences as a host:</h4>
+  <h4>These are your listed experiences as a host:</h4>
 <div class="box-container">
   <% @apartments.each do |apartment| %>
       <% if apartment.photos %>
@@ -24,8 +22,10 @@
         <p>Price: <%= apartment.price_per_day %></p>
         <%= link_to("Edit this listing", apartment_path(apartment)) %>
   <% end %>
-</div>
-
-<%= link_to new_apartment_path do %>
+  <%= link_to new_apartment_path do %>
   <button class="btn btn-success">Add a New Listing!</button>
 <% end %>
+</div>
+<% end %>
+
+
