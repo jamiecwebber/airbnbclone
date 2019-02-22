@@ -120,7 +120,7 @@ p {
 
 #header-image {
   margin-top: -70px;
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   background: linear-gradient(-170deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.5) 100%), url('https://images.unsplash.com/photo-1493849749377-e4f82d0a8319?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2848&q=80');
   background-position: center;
@@ -164,6 +164,7 @@ p {
 .main-container {
 	min-width: 250px;
 	margin: 70px auto 0px;
+  overflow-x:hidden;
 }
 
 p {
