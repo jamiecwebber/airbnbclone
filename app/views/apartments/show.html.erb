@@ -1,77 +1,83 @@
 <div class="container <%= @apartment.category %>">
 
+
+
   <div class="row">
     <div class="col-xs-12">
       <div class="apartment-photo-collage">
-        <% if @apartment.photos %>
-          <img src=<%= @apartment.photos%> width="200" height="200" >
-          <div class="box-name"><p><%= @apartment.user.first_name %>'s <%= @apartment.name %></p></div>
-        <% else %>
-          <img id="image-hack" src=<%= cl_image_path(@apartment.upload_photos) unless @apartment.upload_photos.blank? %> height="200" >
-          <div class="box-name"><p><%= @apartment.user.first_name %>'s <%= @apartment.name %></p></div>
-        <% end %>
-      </div>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-xs-12">
-      <div class="apartment-controls">
-        <div class="btn">
-          <%= link_to "Edit", edit_apartment_path %>
-        </div>
-        <div class="btn">
-         <%= link_to "Delete", apartment_path,
-            method: :delete,
-            data: { confirm: "Are you sure?" } %>
-        </div>
-        <div class="btn">
-          <%= link_to "Book", new_booking_path({apartment_id: @apartment.id}) %>
-        </div>
-        <div class="btn">
-          <%= link_to "Back", apartments_path %>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-xs-12 col-sm-6">
-      <div class="apartment-user-avatar">
         <% if @apartment.user.photos %>
-          <img class="host-avatar" src="<%= @apartment.user.photos %>">
+          <img id="host-avatar" src="<%= @apartment.user.photos %>">
         <% else %>
           <img class="host-avatar" src="<%= cl_image_path(@apartment.user.upload_photos) unless @apartment.user.upload_photos.blank? %>">
         <% end %>
-      </div>
-      <div class="user-details">
-        <h1 class="white"><%= @apartment.user.first_name %> <%= @apartment.user.last_name %>
-        </h1>
-        <p><strong>Host Since:</strong> <%= @apartment.user.created_at %></p>
-        <p><strong>Bio:</strong> <%= @apartment.user.bio %></p>
-      </div>
-      <div class="apartment-details">
-        <h1 class="white"> <%= @apartment.name %></h1>
-        <p>Here is a description of your apartment: </p>
-        <p> <strong>Name:</strong> <%=  @apartment.name %> </p>
-        <p> <strong>Price:</strong> <%=  @apartment.price_per_day %></p>
-        <p> <strong>Theme:</strong> <%=  @apartment.category %></p>
-        <p> <strong>Description:</strong> <%=  @apartment.description %></p>
-        <p> <strong>Location:</strong> <%=  @apartment.location %></p>
+
+        <div class="apartment-controls">
+          <div class="btn my-btn">
+            <%= link_to "Edit", edit_apartment_path %>
+          </div>
+          <div class="btn my-btn">
+           <%= link_to "Delete", apartment_path,
+              method: :delete,
+              data: { confirm: "Are you sure?" } %>
+          </div>
+          <div class="btn my-btn">
+          <%= link_to "Book", new_booking_path({apartment_id: @apartment.id}) %>
+          </div>
+          <div class="btn my-btn">
+            <%= link_to "Back", apartments_path %>
+          </div>
+        </div>
+
+        <% if @apartment.photos %>
+          <img src=<%= @apartment.photos%> width="200" height="200" >
+        <% else %>
+          <img id="image-hack" src=<%= cl_image_path(@apartment.upload_photos) unless @apartment.upload_photos.blank? %> height="200" >
+          <div class="box-name"><p><%= @apartment.user.first_name %>'s <%= @apartment.name %></p>
+          </div>
+        <% end %>
       </div>
     </div>
+  </div>
+
+
+
+  <div class="row">
+    <div class="col-xs-12 col-sm-6">
+        <div class="user-details">
+          <h3 class="white"><%= @apartment.user.first_name %> <%= @apartment.user.last_name %>
+          </h3>
+          <p><strong>Host Since:</strong></p>
+          <p><%= @apartment.user.created_at %></p>
+          <p><strong>Bio:</strong></p>
+          <p><%= @apartment.user.bio %></p>
+        </div>
+      </div>
+
+  <div class="col-xs-12 col-sm-6">
+        <div class="apartment-details">
+          <h3 class="white"> <%= @apartment.name %></h3>
+          <p>Here is a description of your apartment: </p>
+          <p> <strong>Name:</strong></p>
+          <p><%=  @apartment.name %> </p>
+          <p> <strong>Price:</strong></p>
+          <p><%=  @apartment.price_per_day %></p>
+          <p> <strong>Theme:</strong>
+          <p><%=  @apartment.category %></p>
+          <p><strong>Description:</strong></p>
+          <p><%=  @apartment.description %></p>
+          <p> <strong>Location:</strong></p>
+          <p><%=  @apartment.location %></p>
+        </div>
+      </div>
 
     <div class="col-xs-12 col-sm-6">
       <div class="apartment-booking-form">
         <%= render "booking_form" %>
       </div>
     </div>
-  </div>
-
-  <div class="row">
     <div class="col-xs-12">
       <div class="apartment-reviews">
-        <h1>Reviews for: <%= @apartment.name %></h1>
+        <h3>Reviews for: <%= @apartment.name %></h3>
         <% @apartment.bookings.reverse_each do |booking| %>
 
           <% unless booking.reviews[0].nil? %>
