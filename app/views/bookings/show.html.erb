@@ -1,22 +1,41 @@
-<div class="bookings-container">
+<style>
+  table {margin: 50px;}
+  .btn {margin-left: 58px;}
+</style>
+<div class="my-apartments-container">
 	<h1>Booking details for <%= @apartment.name %></h1>
-<table>
-	<tr>
-		<td>Start date:</td>  <td><%= @booking.enter_date %></td>
-	</tr>
-	<tr>
-		<td>End date:</td>    <td><%= @booking.exit_date %></td>
-	</tr>
-	<tr>
-		<td>Total number of days: </td><td> <%= (Date.parse(@booking.exit_date) - Date.parse(@booking.enter_date)).to_i %></td>
-	</tr>
-	<tr>
-		<td>Cost per day:</td><td> <%= @apartment.price_per_day %></td>
-	</tr>
-	<tr>
-		<td>Total cost:</td><td> <%= @booking.price_total %></td>
-	</tr>
-</table>
-
-<%= link_to "See all your bookings", bookings_path, class:"btn" %>
+  <h4>Congratulations! You're Tripping!</h4>
+  <div class="my-apartment-card">
+    <% if @apartment.photos %>
+      <div class="my-apartment-photos">
+        <img src=<%= @apartment.photos%> height="200" >
+        <p><%= @apartment.user.first_name %>'s <%= @apartment.name %></p>
+      </div>
+    <% else %>
+      <div class="my-apartment-photos">
+        <img src=<%= cl_image_path(@apartment.upload_photos) unless @apartment.upload_photos.blank? %> height="200" >
+        <p><%= @apartment.user.first_name %>'s <%= @apartment.name %></p>
+      </div>
+    <% end %>
+  <div class="my-card-content">
+    <table>
+    	<tr>
+    		<td>Start date:</td>  <td><%= @booking.enter_date %></td>
+    	</tr>
+    	<tr>
+    		<td>End date:</td>    <td><%= @booking.exit_date %></td>
+    	</tr>
+    	<tr>
+    		<td>Total number of days: </td><td> <%= (Date.parse(@booking.exit_date) - Date.parse(@booking.enter_date)).to_i %></td>
+    	</tr>
+    	<tr>
+    		<td>Cost per day:</td><td> <%= @apartment.price_per_day %></td>
+    	</tr>
+    	<tr>
+    		<td>Total cost:</td><td> <%= @booking.price_total %></td>
+    	</tr>
+    </table>
+    <%= link_to "See all your bookings", bookings_path, class:"btn btn-success" %>
+  </div>
+  </div>
 </div>

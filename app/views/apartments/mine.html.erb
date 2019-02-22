@@ -21,19 +21,17 @@
       <% if apartment.photos %>
         <div class="my-apartment-photos">
           <img src=<%= apartment.photos%> height="200" >
-          <p><%= apartment.user.first_name %>'s <%= apartment.name %></p>
+          <p><%= apartment.name %>'</p>
         </div>
       <% else %>
         <div class="my-apartment-photos">
           <img src=<%= cl_image_path(apartment.upload_photos) unless apartment.upload_photos.blank? %> height="200" >
-          <p><%= apartment.user.first_name %>'s <%= apartment.name %></p>
+          <p><%= apartment.name %></p>
         </div>
       <% end %>
       <div class="my-card-content">
-        <p>Name: <%= apartment.name %></p>
-        <p>Category: <%= apartment.category %> </p>
-        <p>Description: <%= apartment.description %></p>
-        <p>Price: <%= apartment.price_per_day %></p>
+        <p>Daily Rate: $  <%= apartment.description %></p>
+        <p>Location: <%= apartment.location %></p>
         <%= link_to(apartment_path(apartment)) do %>
           <button class="btn btn-success">Edit This Listing</button>
         <% end %>
