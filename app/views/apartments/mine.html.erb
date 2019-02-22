@@ -1,1 +1,31 @@
-HELLO
+<% if @apartments.empty? %>
+  <h1>You Currently Have no Listings</h1>
+  <p>Become a host: Add one now!</p>
+  <%= link_to new_apartment_path do %>
+  <button class="btn btn-success">Add Your First Listing!</button>
+  <% end %>
+<% else %>
+  <h1>Here Are your Apartments</h1>
+  <h4>These are your listed experiences as a host:</h4>
+<div class="box-container">
+  <% @apartments.each do |apartment| %>
+      <% if apartment.photos %>
+        <img src=<%= apartment.photos%> width="200" height="200" >
+        <div class="box-name"><p><%= apartment.user.first_name %>'s <%= apartment.name %></p></div>
+      <% else %>
+        <img id="image-hack" src=<%= cl_image_path(apartment.upload_photos) unless apartment.upload_photos.blank? %> height="200" >
+        <div class="box-name"><p><%= apartment.user.first_name %>'s <%= apartment.name %></p></div>
+      <% end %>
+        <p>Name: <%= apartment.name %></p>
+        <p>Category: <%= apartment.category %> </p>
+        <p>Description: <%= apartment.description %></p>
+        <p>Price: <%= apartment.price_per_day %></p>
+        <%= link_to("Edit this listing", apartment_path(apartment)) %>
+  <% end %>
+  <%= link_to new_apartment_path do %>
+  <button class="btn btn-success">Add a New Listing!</button>
+<% end %>
+</div>
+<% end %>
+
+
