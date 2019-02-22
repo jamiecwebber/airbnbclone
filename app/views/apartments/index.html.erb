@@ -32,9 +32,9 @@
   <p>Our host selection process is informed by cutting-edge machine-learning algorithms (because what isn't these days?) <br>As a result, we only select the most socially desirable people who definitely are not creeps and weirdos.</p>
   <div id="card-container">
     <div class="scrolling-wrapper">
-      <% @apartments.reverse_each do |apartment| %>
+      <% @apartments.reverse_each do |apartment|%>
           <!-- <div class="col-sm-6 col-lg-4"> -->
-            <%= link_to apartment_path(apartment.id) do %>
+            <%= link_to apartment_path(apartment.id), class: "scroll-item" do %>
               <div class="card">
                 <div class="gradient">
                   <h1><%= apartment.name %></h1>

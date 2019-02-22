@@ -8,6 +8,7 @@ class ApartmentsController < ApplicationController
 
   # GET /apartments
   def index
+
     if params[:query].present?
       @apartments = Apartment.global_search(params[:query])
     else
@@ -61,4 +62,3 @@ class ApartmentsController < ApplicationController
     params.require(:apartment).permit(:user_id, :price_per_day, :category, :name, :description, :location, :upload_photos)
   end
 end
-
