@@ -37,11 +37,12 @@ p {
 }
 
 .box-container {
-  padding: 20px;
-  height: 70vh;
+  padding: 0px;
+  height: 60vh;
   display: flex;
   justify-content: center;
   margin: 15px;
+  background-color: #f9f9f9 ;
 }
 
 .box-left {
@@ -57,13 +58,30 @@ p {
   background-position: center;
 }
 
+#face-collage {
+  background-color: white;
+}
+
 .box-right {
   text-align: left;
   flex: 0 0 50%;
   margin: 50px;
   p {
     text-align: left;
+    margin-left: 7px;
   }
+  ul {
+    margin-left: -14px;
+  }
+  li {
+    font-size: 20px;
+    letter-spacing: 3px;
+    padding: 3px;
+  }
+}
+
+#block3-p {
+  padding-bottom: 15px;
 }
 
 .box-image {

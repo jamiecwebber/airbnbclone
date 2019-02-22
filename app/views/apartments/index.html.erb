@@ -9,10 +9,10 @@
   </div>
 </div>
 
-<h2>Add Some <span id="colour-word">Colour</span> To Life</h2>
-<h3><i>When you travel it's the people you meet that make the place.</i></h3>
-<p>We promise that every trip you take with Trippy will be a vibrant and unforgettable experience.</p>
-<div class="box-container">
+<h2>It's Like AirBnB, but <span id="colour-word">Trippier</span></h2>
+<h3><i>We emphasize the host and not the apartment, because in the end it's the people that make the place.</i></h3>
+<p>We promise that every trip you take with us will be the Trippiest experience ever. Guranteed.<br> Otherwise I'll make Jamie give you your money back.</p>
+<div class="box-container" id="face-collage">
   <div class="box-image" id="pic1">
   </div>
   <div class="box-image" id="pic2">
@@ -28,7 +28,7 @@
 <div class="wrapper-grey">
   <h2>Featured Hosts</h2>
   <h3><i>If the robots don't like em, then you probably won't either.</i></h3>
-  <p>Our host selection process is informed by cutting-edge machine-learning algorithms that select only the most socially desirable people<br>who definitely are not creeps and weirdos.</p>
+  <p>Our host selection process is informed by cutting-edge machine-learning algorithms (because what isn't these days?) <br>As a result, we only select the most socially desirable people who definitely are not creeps and weirdos.</p>
   <div id="card-container">
     <div class="scrolling-wrapper">
       <% @apartments.reverse_each do |apartment| %>
@@ -50,9 +50,9 @@
 </div>
 
 
-<h2>Trippy is like AirBnB, But Reversed</h2>
-<h3><i>We emphaisze the host and not the apartment</i></h3>
-<p>Choose from a variety of hosts from different categories</p>
+<h2>Add Some <span id="colour-word">Colour</span> To Your World</h2>
+<h3><i>Choose to stay with hosts from all walks of life.</i></h3>
+<p id="block3-p">At the end of the day, one thing is certain: you'll definitely have <strong>a story to tell.</strong></p>
 <div class="box-container">
   <div class="box-left">
     <div id="box-left-image"></div>
@@ -64,7 +64,7 @@
         <span>Artists</span>
       </li>
       <li class="icon">
-        <i class="fas fa-guitar"></i>
+        <i class="fas fa-music"></i>
         <span>Musicians</span>
       </li>
       <li class="icon">
@@ -76,20 +76,23 @@
         <span>Lion tamers</span>
       </li>
       <li class="icon">
-        <i class="fas fa-duck"></i>
-        <span>Yellow Ducks</span>
-      </li>
-      <li class="icon">
-        <i class="fas fa-crown"></i>
-        <span>Kings</span>
+        <i class="fas fa-fist-raised"></i>
+        <span>Revolutionaries</span>
       </li>
         <li class="icon">
           <i class="fab fa-reddit-alien"></i>
         <span>Androids</span>
       </li>
+      <li class="icon">
+        <i class="fas fa-democrat"></i>
+        <span>Unicorns</span>
+      </li>
     </ul>
+    <p>So what are you waiting for?</p>
+    <%= render "search" %>
   </div>
 </div>
+<%= render "footer" %>
 
 
 
