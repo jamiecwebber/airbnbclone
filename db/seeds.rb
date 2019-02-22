@@ -151,7 +151,7 @@ lilly = User.new({
     first_name: "Lilly",
     last_name: "Tomer",
     photos: "https://66.media.tumblr.com/b00ec0b1e5ebab98f3d916d80927a216/tumblr_pcb521MCfC1uqvofpo1_1280.jpg",
-    bio: "Hi, I am Lilly. I am in my thirties and I have saved up some money to travel. I love the idea that this site affords me the opportunity to travel but also experience a new city like a local who has thrived in that city."
+    bio: "Hi, I am Lilly. I am in my thirties and I have saved up some money to travel. I love the idea that this site affords me the opportunity to travel but also experience a new city like a local who has thrived in that city.",
     email: "lilly@email.com",
     password: "lewagon"
 })
