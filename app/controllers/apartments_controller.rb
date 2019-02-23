@@ -6,16 +6,26 @@ class ApartmentsController < ApplicationController
     @apartments = Apartment.where(user: current_user)
   end
 
+  # Search Results Page
+  def map_search
+    @apartments = Apartment.where.not(latitude: nil, longitude: nil)
+
+    @markers = @apartments.map do |apartment|
+      { lng: apartment.longitude,
+        lat: apartment.latitude,
+        infoWindow: render_to_string(partial: "infowindow", locals: { apartment: apartment })
+      }
+    end
+  end
+
   # GET /apartments
   def index
-
     if params[:query].present?
       @apartments = Apartment.global_search(params[:query])
     else
       @apartments = Apartment.all
     end
     # @apartments = Apartment.where({ user_id: params[:user_id] })
-
   end
 
   def show
@@ -59,6 +69,6 @@ class ApartmentsController < ApplicationController
   private
 
   def apartment_params
-    params.require(:apartment).permit(:user_id, :price_per_day, :category, :name, :description, :location, :upload_photos)
+    params.require(:apartment).permit(:user_id, :price_per_day, :category, :name, :description, :address, :upload_photos)
   end
 end

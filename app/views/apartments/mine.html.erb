@@ -32,7 +32,7 @@
       <div class="my-card-content">
         <p>Daily Rate: $  <%= apartment.price_per_day%></p>
         <p>Category: <%= apartment.category %></p>
-        <p>Location: <%= apartment.location %></p>
+        <p>address: <%= apartment.address %></p>
         <p>Description: <%= apartment.description %></p>
         <%= link_to(edit_apartment_path(apartment.id)) do %>
           <button class="btn btn-success">Edit This Listing</button>

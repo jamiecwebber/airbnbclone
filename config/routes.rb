@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :apartments do
     collection do
       get :mine
+      get :map_search
     end
   end
 

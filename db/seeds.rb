@@ -26,7 +26,7 @@ def generate_appartment(id)
   category = ["arts", "sports", "science", "business"]
   name = Faker::Restaurant.name
   description = bio_generator # See line 15 for method definition
-  location = "#{Faker::Address.street_address}, #{Faker::Address.city}, #{Faker::Address.zip_code}"
+  address = "#{Faker::Address.street_address}, #{Faker::Address.city}, #{Faker::Address.zip_code}"
   photos = "https://source.unsplash.com/collection/494266/1600x900?#{rand()}"
 
   new_appartment = Apartment.new({
@@ -34,7 +34,7 @@ def generate_appartment(id)
     category: category[rand(0..3)],
     name: name,
     description: description,
-    location: location,
+    address: address,
     photos: photos,
     user_id: host_id
   })

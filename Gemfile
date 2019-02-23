@@ -1,6 +1,10 @@
 source 'https://rubygems.org'
 ruby '2.5.3'
 
+# Geomap gems
+gem 'geocoder'
+
+#Search bar gems
 gem 'pg_search'
 
 # Front End Gems

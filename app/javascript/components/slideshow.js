@@ -1,8 +1,12 @@
-const count = (start) => {
- let next = start-1;
- let finish = -(next /100);
- return finish
-}
+const slideShow = () => {
+  console.log('slideshow debug');
+};
+
+// const count = (start) => {
+//  let next = start-1;
+//  let finish = -(next /100);
+//  return finish
+// }
 
 // const slideShow = document.querySelectorAll('.scroll-item')
 // .forEach((card) => {

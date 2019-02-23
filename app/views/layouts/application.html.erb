@@ -7,16 +7,16 @@
     <%= csrf_meta_tags %>
     <%= action_cable_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all' %>
-    <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
+    <%= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
     <meta id="controller-action" data-controller="<%= controller_name %>" data-method="<%= action_name %>">
   </head>
   <body>
     <%= render 'shared/navbar' %>
-    
+
       <div class="main-container">
-        <%= yield %> 
+        <%= yield %>
       </div>
-    
+
       <%= javascript_include_tag 'application' %>
       <%= javascript_pack_tag 'application' %>
       <p class="notice"><%= notice %></p>

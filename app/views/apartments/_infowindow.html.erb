@@ -1,0 +1,10 @@
+<% @apartments.each do |apartment| %>
+  <div>
+    Place: <%= apartment.name %>
+    <%= apartment.address %>
+  </div>
+  <div>
+    Owned by: <%= apartment.user.first_name %>
+    <%= apartment.user.last_name %>
+  </div>
+<% end %>
