@@ -1,16 +1,13 @@
-<% @apartments.each do |apartment|%>
- <ul>
-  <li><%= apartment.name %></li>
-  <li><%= apartment.address %></li>
-  <li><%= apartment.latitude %></li>
-  <li><%= apartment.longitude %></li>
-  </ul>
-<% end %>
+<!-- Layout: two equal windows, no margin -->
+<div class="custom-container">
+  <div class="left-window no-padding">
+    <div class="card-container">
+      <%= render partial: "layouts/map-left-window"%>
+    </div>
+  </div>
 
-<div
-  id="map"
-  style="width: 100%;
-  height: 600px;"
-  data-markers="<%= @markers.to_json %>"
-  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
-></div>
+  <div class="right-window no-padding">
+    <%= render partial: "apartments/map_show" %>
+  </div>
+</div>
+

@@ -1,0 +1,65 @@
+// Layout
+.left-window {
+  padding:0;
+  margin:0;
+  height: 100%;
+  width: 100%;
+  grid-row: 1 / span 12;
+  grid-column: 1 / span 6;
+}
+
+.right-window {
+  padding:0;
+  margin:0;
+  height: 100%;
+  width: 100%;
+  grid-row: 1 / span 12;
+  grid-column: 7 / span 6;
+}
+
+@media(max-width: 960px) {
+  .left-window {
+    grid-row: 7 / span 6;
+    grid-column: 1 / span 12;
+  }
+  .right-window {
+    grid-row: 1 / span 6;
+    grid-column: 1 / span 12;
+  }
+}
+
+//  Components
+.mapboxgl-ctrl-top-right { //map search bar
+  z-index: 0;
+}
+
+.card-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.card1 {
+  height: 250px !important;
+  width: 250px !important;
+  border: 1px solid rgba(0,0,0,0.3);
+  margin: 10px;
+}
+
+#map {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+}
+
+@media(max-width: 960px) {
+  #map {
+    width: 100%;
+    height: 100%;
+    position: relative;
+  }
+}
+
+
