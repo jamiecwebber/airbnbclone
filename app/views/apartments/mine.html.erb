@@ -11,7 +11,7 @@
   <h4>These are your listed experiences as a host:</h4>
   <%= link_to new_apartment_path do %>
     <div class="btn-container">
-      <button class="btn btn-success">Add Another Listing!</button>
+      <%= render "apartments/modal-apartment-create" %>
     </div>
   <% end %>
 
@@ -34,9 +34,7 @@
         <p>Category: <%= apartment.category %></p>
         <p>address: <%= apartment.address %></p>
         <p>Description: <%= apartment.description %></p>
-        <%= link_to(edit_apartment_path(apartment.id)) do %>
-          <button class="btn btn-success">Edit This Listing</button>
-        <% end %>
+        <%= render partial: "apartments/modal-apartment-edit" %>
         <%= link_to apartments_path(apartment.id), method: :delete,data: { confirm: "Are you sure?" } do %>
           <button class="btn btn-success">Remove This Listing</button>
         <% end %>

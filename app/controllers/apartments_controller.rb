@@ -3,6 +3,7 @@ class ApartmentsController < ApplicationController
 
   # User Apartments
   def mine
+    @apartment = Apartment.new
     @apartments = Apartment.where(user: current_user)
   end
 
@@ -29,6 +30,7 @@ class ApartmentsController < ApplicationController
   end
 
   def show
+    @review = Review.new
     @booking = Booking.new
     @apartment = Apartment.find(params[:id])
   end
@@ -53,9 +55,9 @@ class ApartmentsController < ApplicationController
   def update
     @apartment = Apartment.find(params[:id])
     if @apartment.update(apartment_params)
-      redirect_to apartment_path(@apartment)
+      redirect_to :mine
     else
-      render :edit
+      render :mine
     end
   end
 
