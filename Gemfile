@@ -1,6 +1,10 @@
 source 'https://rubygems.org'
 ruby '2.5.3'
 
+# Payment and Stripe
+gem 'money-rails'
+gem 'stripe'
+
 # Geomap gems
 gem 'geocoder'
 

@@ -1,6 +1,6 @@
 <h1 class="black">Make a new booking</h1>
 <p><strong>Make a booking for </strong><%= @apartment.name %></p>
-<p><strong>Price per night: </strong><%= @apartment.price_per_day %></p>
+<p><strong>Price per night: </strong><%= humanized_money_with_symbol(@apartment.price) %></p>
 
 <%= simple_form_for @booking do |f| %>
   <div class="row">

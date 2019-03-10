@@ -51,7 +51,7 @@
           <p> <strong>Name:</strong></p>
           <p><%=  @apartment.name %> </p>
           <p> <strong>Price:</strong></p>
-          <p><%=  @apartment.price_per_day %></p>
+          <p><%= humanized_money_with_symbol(@apartment.price) %></p>
           <p> <strong>Theme:</strong>
           <p><%=  @apartment.category %></p>
           <p><strong>Description:</strong></p>

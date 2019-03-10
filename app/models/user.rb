@@ -6,5 +6,5 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  validates :first_name, :last_name, :upload_photos, :email, :password, presence: true, allow_blank: false
+  validates :first_name, :last_name, :email, :password, presence: true, allow_blank: false
 end

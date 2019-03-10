@@ -8,7 +8,7 @@ class Apartment < ApplicationRecord
   has_many :bookings
   has_many :reviews, through: :bookings
 
-  validates :price_per_day, :category, :name, :description, :address, presence: true, allow_blank: false
+  validates :category, :name, :description, :address, presence: true, allow_blank: false
 
   include PgSearch
   pg_search_scope :global_search,
@@ -19,4 +19,6 @@ class Apartment < ApplicationRecord
     using: {
       tsearch: { prefix: true }
     }
+
+  monetize :price_cents
 end

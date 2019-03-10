@@ -11,6 +11,11 @@ require "json"
 require "faker"
 require "rest-client"
 
+Review.destroy_all
+Booking.destroy_all
+Apartment.destroy_all
+User.destroy_all
+
 # Returns a string used as 'bio' in the user object.
 def bio_generator
   url = 'https://api.adviceslip.com/advice'
@@ -30,7 +35,7 @@ def generate_appartment(id)
   photos = "https://source.unsplash.com/collection/494266/1600x900?#{rand()}"
 
   new_appartment = Apartment.new({
-    price_per_day: price_per_day,
+    price: price_per_day,
     category: category[rand(0..3)],
     name: name,
     description: description,
@@ -80,11 +85,13 @@ def user_api_call
 end
 
 # Splitting 100 users into 'guests' and 'owners'
+puts "Making API call..."
 array_of_users = user_api_call
 hosts = array_of_users[0...49]
 guests = array_of_users[49..99]
 
 # Generating 50 host objects and saving to database.
+puts "Building hosts..."
 hosts.each do |user|
   first_name = user["name"].split(" ")[0]
   last_name = user["name"].split(" ")[1]
@@ -109,6 +116,7 @@ hosts.each do |user|
 end
 
 # Generating 50 user objects and saving to database.
+puts "Building users..."
 guests.each do |user|
   first_name = user["name"].split(" ")[0]
   last_name = user["name"].split(" ")[1]
@@ -131,7 +139,8 @@ guests.each do |user|
 end
 
 # Seeding bookings and reviews
-1000.times do
+puts "Makin bookings and reviews..."
+100.times do
   generate_booking
 end
 
