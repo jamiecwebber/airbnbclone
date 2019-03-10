@@ -41,6 +41,10 @@
           <p><%= @apartment.user.created_at %></p>
           <p><strong>Bio:</strong></p>
           <p><%= @apartment.user.bio %></p>
+          <%= form_tag(orders_path) do %>
+            <%= hidden_field_tag("apartment_id", @apartment.id) %>
+            <%= submit_tag("Book now!", class: "btn btn-success") %>
+          <% end %>
         </div>
       </div>
 

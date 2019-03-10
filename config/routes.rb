@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
   devise_for :users, :controllers => { registrations: 'registrations' }
 
+  resources :orders, only: [:show, :create] do
+    resources :payments, only: [:new, :create]
+  end
+
   resources :apartments do
     collection do
       get :mine
