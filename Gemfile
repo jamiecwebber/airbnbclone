@@ -1,15 +1,10 @@
 source 'https://rubygems.org'
 ruby '2.5.3'
 
-# Payment and Stripe
+gem 'pg_search'
+gem 'geocoder'
 gem 'money-rails'
 gem 'stripe'
-
-# Geomap gems
-gem 'geocoder'
-
-#Search bar gems
-gem 'pg_search'
 
 # Front End Gems
 gem 'simple_form'
@@ -33,7 +28,6 @@ gem 'redis'
 
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass', '~> 3.3'
-gem 'bootstrap', '~> 4.3.1'
 gem 'font-awesome-sass', '~> 5.5.0'
 gem 'sassc-rails'
 gem 'uglifier'
